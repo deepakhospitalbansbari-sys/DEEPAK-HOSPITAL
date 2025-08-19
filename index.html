@@ -3,131 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepak Hospital - Baansbaari</title>
+  <title>Deepak Hospital - Baansbaari Haat</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f8fff8;
+      background-color: #f5fdf6;
       color: #222;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1584438784894-089d6a62b8fa') no-repeat center center/cover;
+      background: linear-gradient(135deg, #2e8b57, #3cb371);
       color: white;
       text-align: center;
-      padding: 80px 20px;
+      padding: 2rem 1rem;
     }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      text-shadow: 2px 2px 4px #000;
+    header h1 { margin: 0; font-size: 2.2rem; }
+    header p { margin: 0.5rem 0 0; }
+
+    nav {
+      background: #2e8b57;
+      padding: 0.5rem;
+      text-align: center;
     }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      text-shadow: 1px 1px 3px #000;
+    nav button {
+      background: white;
+      color: #2e8b57;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 0 0.5rem;
+      border-radius: 5px;
     }
+
     section {
-      padding: 50px 20px;
+      padding: 2rem 1rem;
       max-width: 1100px;
       margin: auto;
     }
-    h2 {
-      text-align: center;
-      color: #006400;
-      margin-bottom: 30px;
-    }
-    .services, .facilities, .doctors, .feedbacks {
+    h2 { color: #2e8b57; margin-bottom: 1rem; }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 1.5rem;
     }
     .card {
       background: white;
       border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
     }
     .card img {
       width: 100%;
-      height: 150px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
     }
-    .contact {
-      text-align: center;
-      padding: 40px;
-      background: #eaffea;
-      border-top: 4px solid #006400;
+    .card h3 {
+      margin: 0.5rem 0;
+      color: #2e8b57;
     }
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #006400;
+
+    footer {
+      background: #2e8b57;
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
+      text-align: center;
+      padding: 1rem;
     }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>WELCOME TO DEEPAK HOSPITAL</h1>
-  <p>शांति चौक, बांसबाड़ी हाट, किशनगंज</p>
+  <h1 data-en="Welcome to Deepak Hospital" data-hi="दीपक अस्पताल में आपका स्वागत है">Welcome to Deepak Hospital</h1>
+  <p data-en="Shanti Chowk, Baansbaari Haat, Kishanganj" data-hi="शांति चौक, बांसबाड़ी हाट, किशनगंज">Shanti Chowk, Baansbaari Haat, Kishanganj</p>
 </header>
 
+<nav>
+  <button onclick="setLang('en')">English</button>
+  <button onclick="setLang('hi')">हिंदी</button>
+</nav>
+
 <section>
-  <h2>🏥 Our Services / हमारी सेवाएं</h2>
-  <div class="services">
-    <div class="card"><img src="https://images.unsplash.com/photo-1580281657527-47f249e8b3c6"><p>Normal & Cesarean Delivery (नॉर्मल व सिजेरियन डिलीवरी)</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481"><p>Gallbladder & Kidney Stone Operation</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1624223806115-b8df57d3bba9"><p>Appendix, Hernia, Hydrocele, Tumor</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e95"><p>Babashir, Jaundice (पीलिया), Asthma (दममा), TB Treatment</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1588776814546-3f9ad78834ed"><p>ECG, Pathology, Pharmacy, Oxygen, Nebulizer</p></div>
+  <h2 data-en="About Us" data-hi="हमारे बारे में">About Us</h2>
+  <p data-en="Established in 2005, Deepak Hospital is Kishanganj’s No.1 hospital with 4.9/5 rating. We provide 24x7 emergency services, experienced doctors and modern facilities." 
+     data-hi="2005 में स्थापित, दीपक अस्पताल किशनगंज का नं. 1 अस्पताल है (रेटिंग 4.9/5)। हम 24x7 आपातकालीन सेवाएँ, अनुभवी डॉक्टर और आधुनिक सुविधाएँ प्रदान करते हैं।">
+     Established in 2005...
+  </p>
+</section>
+
+<section>
+  <h2 data-en="Our Services" data-hi="हमारी सेवाएँ">Our Services</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1620662732461-28b5c828a53e" alt="Delivery">
+      <h3 data-en="Normal & Cesarean Delivery" data-hi="सामान्य एवं सीजेरियन डिलीवरी">Normal & Cesarean Delivery</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588776814546-ec06fefbe9f2" alt="Surgery">
+      <h3 data-en="General Surgery (Gallbladder, Appendix, Hernia)" data-hi="सामान्य शल्य चिकित्सा (पथरी, अपेंडिक्स, हर्निया)">General Surgery</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1629909613491-24e76c6e94a3" alt="Kidney">
+      <h3 data-en="Kidney Stone Treatment" data-hi="किडनी स्टोन का इलाज">Kidney Stone Treatment</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588774064710-1bd5e2e0cc63" alt="Asthma">
+      <h3 data-en="Asthma, Chest & TB Care" data-hi="दमा, सीने एवं टी.बी. का इलाज">Asthma, Chest & TB Care</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600959907703-6af9a7492e8f" alt="Hydrocele">
+      <h3 data-en="Hydrocele & Urology" data-hi="हाइड्रोसील एवं यूरोलॉजी">Hydrocele & Urology</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600959905674-6c9fba07f92d" alt="Emergency">
+      <h3 data-en="24x7 Emergency & Accidental Care" data-hi="24x7 आपातकालीन एवं दुर्घटना देखभाल">24x7 Emergency Care</h3>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>👨‍⚕️ Our Doctors</h2>
-  <div class="doctors">
-    <div class="card"><img src="https://images.unsplash.com/photo-1606813902911-9f9e8f4b84e0"><h3>Dr. Shabab Ahmad</h3><p>(BUMS, GUMC) – RMO</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464"><h3>Dr. Roshan Ali</h3><p>MBBS, MD</p></div>
+  <h2 data-en="Facilities" data-hi="सुविधाएँ">Facilities</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588776814546-ec06fefbe9f2" alt="ICU">
+      <h3 data-en="ICU, NICU & Burn Ward" data-hi="आई.सी.यू., एन.आई.सी.यू. एवं बर्न वार्ड">ICU, NICU & Burn Ward</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588774064710-1bd5e2e0cc63" alt="Delivery Ward">
+      <h3 data-en="Separate Delivery Ward & AC Rooms" data-hi="अलग डिलीवरी वार्ड एवं ए.सी. रूम">Delivery Ward & AC Rooms</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600959907703-6af9a7492e8f" alt="Pharmacy">
+      <h3 data-en="Pharmacy, Pathology & Oxygen" data-hi="फार्मेसी, पैथोलॉजी एवं ऑक्सीजन">Pharmacy & Pathology</h3>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>🏨 Facilities</h2>
-  <div class="facilities">
-    <div class="card"><img src="https://images.unsplash.com/photo-1600959907703-3cc25b6e3e9b"><p>ICU, NICU, OPD, Emergency 24x7</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1584982751634-3f34e77f43a4"><p>General Surgery, Gynecology, Chest Medicine</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1606813902828-04c79e755fd4"><p>Burn Ward, Baby Warmer, Separate Delivery Ward, AC Rooms</p></div>
+  <h2 data-en="Our Doctors" data-hi="हमारे डॉक्टर">Our Doctors</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Dr. Shabab Ahmad</h3>
+      <p>(BUMS, GUMC) - RMO</p>
+    </div>
+    <div class="card">
+      <h3>Dr. Roshan Ali</h3>
+      <p>MBBS, MD</p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>⭐ Patient Feedback</h2>
-  <div class="feedbacks">
-    <div class="card"><p>“बहुत अच्छा इलाज और अच्छे डॉक्टर।” – Ramesh, Bahadurganj</p></div>
-    <div class="card"><p>“साफ-सुथरा अस्पताल और 24x7 सुविधा।” – Sita Devi, Kochadhaman</p></div>
-    <div class="card"><p>“मेरे ऑपरेशन सफल हुआ, धन्यवाद।” – Karim, Thakurganj</p></div>
-    <div class="card"><p>“डॉक्टर और नर्स का व्यवहार बहुत अच्छा।” – Anjali, Terhagachh</p></div>
-    <div class="card"><p>“किशनगंज का No.1 अस्पताल।” – Mukesh, Pothia</p></div>
-  </div>
+  <h2 data-en="Contact Us" data-hi="संपर्क करें">Contact Us</h2>
+  <p data-en="📞 Call: 7979812332 | WhatsApp for Appointment: 7783022191" 
+     data-hi="📞 कॉल: 7979812332 | अपॉइंटमेंट हेतु व्हाट्सएप: 7783022191">
+     📞 Call: 7979812332
+  </p>
 </section>
 
-<section>
-  <h2>ℹ️ About Us</h2>
-  <p style="text-align:center; max-width:900px; margin:auto;">Established in 2005, Deepak Hospital, Shanti Chowk, Baansbaari Haat, Kishanganj is the most trusted medical center in the region. With advanced facilities, experienced doctors & compassionate care, we proudly hold a 4.9/5 rating – Kishanganj, Bihar का No.1 अस्पताल.</p>
-</section>
+<footer>
+  <p>© 2025 Deepak Hospital, Baansbaari Haat, Kishanganj</p>
+</footer>
 
-<div class="contact">
-  <h2>📞 Contact Us</h2>
-  <p>Phone: 7979812332</p>
-  <a class="btn" href="https://wa.me/917783022191" target="_blank">Book Appointment on WhatsApp</a>
-</div>
+<script>
+  function setLang(lang) {
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.innerText = el.getAttribute("data-" + lang);
+    });
+  }
+</script>
 
 </body>
 </html>
