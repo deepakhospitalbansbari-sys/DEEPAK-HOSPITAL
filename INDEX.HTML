@@ -1,106 +1,133 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepak Hospital - Shanti Chowk, Baansbaari Haat</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Deepak Hospital - Baansbaari</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8fff8;
+      color: #222;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1584438784894-089d6a62b8fa') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      text-shadow: 2px 2px 4px #000;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      text-shadow: 1px 1px 3px #000;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #006400;
+      margin-bottom: 30px;
+    }
+    .services, .facilities, .doctors, .feedbacks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .contact {
+      text-align: center;
+      padding: 40px;
+      background: #eaffea;
+      border-top: 4px solid #006400;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #006400;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
+<body>
 
-  <!-- Hero Section -->
-  <header class="bg-cover bg-center text-white text-center py-16" style="background-image:url('https://images.unsplash.com/photo-1580281658629-87d5f2f7f3a4?auto=format&fit=crop&w=1400&q=80');">
-    <div class="bg-blue-900 bg-opacity-60 p-6 rounded-xl inline-block">
-      <h1 class="text-3xl md:text-5xl font-bold">WELCOME TO DEEPAK HOSPITAL</h1>
-      <p class="mt-2 text-lg md:text-xl">शांति चौक, बांसबाड़ी हाट</p>
-    </div>
-  </header>
+<header>
+  <h1>WELCOME TO DEEPAK HOSPITAL</h1>
+  <p>शांति चौक, बांसबाड़ी हाट, किशनगंज</p>
+</header>
 
-  <!-- About Us -->
-  <section class="max-w-5xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold text-blue-700 border-b-4 border-blue-400 inline-block pb-2">हमारे बारे में (About Us)</h2>
-    <p class="mt-4"><b>Director:</b> दीपक कुमार सिन्हा</p>
-    <p><b>Established:</b> 2005</p>
-    <p class="mt-2">दीपक हॉस्पिटल, शांति चौक बांसबाड़ी हाट, किशनगंज (बिहार) का सबसे भरोसेमंद और आधुनिक अस्पताल है। यहाँ पर अनुभवी डॉक्टर और नर्सिंग स्टाफ 24×7 उपलब्ध रहते हैं। हमारा उद्देश्य है – गाँव और शहर के हर मरीज को किफायती दर पर बेहतरीन इलाज उपलब्ध कराना।</p>
+<section>
+  <h2>🏥 Our Services / हमारी सेवाएं</h2>
+  <div class="services">
+    <div class="card"><img src="https://images.unsplash.com/photo-1580281657527-47f249e8b3c6"><p>Normal & Cesarean Delivery (नॉर्मल व सिजेरियन डिलीवरी)</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481"><p>Gallbladder & Kidney Stone Operation</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1624223806115-b8df57d3bba9"><p>Appendix, Hernia, Hydrocele, Tumor</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e95"><p>Babashir, Jaundice (पीलिया), Asthma (दममा), TB Treatment</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1588776814546-3f9ad78834ed"><p>ECG, Pathology, Pharmacy, Oxygen, Nebulizer</p></div>
+  </div>
+</section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-      <img src="https://images.unsplash.com/photo-1588776814546-46e4c88b10d3?auto=format&fit=crop&w=800&q=80" class="rounded-xl shadow-md" alt="Doctors">
-      <img src="https://images.unsplash.com/photo-1580281658337-2fc67e7b9eaf?auto=format&fit=crop&w=800&q=80" class="rounded-xl shadow-md" alt="Hospital Ward">
-    </div>
-  </section>
+<section>
+  <h2>👨‍⚕️ Our Doctors</h2>
+  <div class="doctors">
+    <div class="card"><img src="https://images.unsplash.com/photo-1606813902911-9f9e8f4b84e0"><h3>Dr. Shabab Ahmad</h3><p>(BUMS, GUMC) – RMO</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1550831107-1553da8c8464"><h3>Dr. Roshan Ali</h3><p>MBBS, MD</p></div>
+  </div>
+</section>
 
-  <!-- Services -->
-  <section class="bg-white py-12">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-blue-700 border-b-4 border-blue-400 inline-block pb-2">हमारी सेवाएँ (Our Services)</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-        <ul class="space-y-2">
-          <li>✅ नॉर्मल डिलीवरी (Normal Delivery)</li>
-          <li>✅ सिजेरियन डिलीवरी (Cesarean Delivery)</li>
-          <li>✅ बच्चेदानी का ऑपरेशन</li>
-          <li>✅ पित्त की थैली (Gallbladder) की पथरी</li>
-          <li>✅ किडनी की पथरी</li>
-          <li>✅ हर्निया, अपेंडिक्स, बवासीर</li>
-          <li>✅ ट्यूमर, टी.बी, पीलिया</li>
-        </ul>
-        <ul class="space-y-2">
-          <li>✅ जोड़ो का दर्द (गठिया)</li>
-          <li>✅ दममा (Asthma)</li>
-          <li>✅ हाइड्रोसील ऑपरेशन</li>
-          <li>✅ पेट की बीमारियाँ</li>
-          <li>✅ Accidental मरीजों का इलाज</li>
-          <li>✅ अनुभवी डॉक्टर व नर्सिंग स्टाफ</li>
-        </ul>
-      </div>
+<section>
+  <h2>🏨 Facilities</h2>
+  <div class="facilities">
+    <div class="card"><img src="https://images.unsplash.com/photo-1600959907703-3cc25b6e3e9b"><p>ICU, NICU, OPD, Emergency 24x7</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1584982751634-3f34e77f43a4"><p>General Surgery, Gynecology, Chest Medicine</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1606813902828-04c79e755fd4"><p>Burn Ward, Baby Warmer, Separate Delivery Ward, AC Rooms</p></div>
+  </div>
+</section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        <img src="https://images.unsplash.com/photo-1622253692010-333f2da603f8?auto=format&fit=crop&w=800&q=80" class="rounded-xl shadow-md" alt="Operation">
-        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" class="rounded-xl shadow-md" alt="Patient Care">
-      </div>
+<section>
+  <h2>⭐ Patient Feedback</h2>
+  <div class="feedbacks">
+    <div class="card"><p>“बहुत अच्छा इलाज और अच्छे डॉक्टर।” – Ramesh, Bahadurganj</p></div>
+    <div class="card"><p>“साफ-सुथरा अस्पताल और 24x7 सुविधा।” – Sita Devi, Kochadhaman</p></div>
+    <div class="card"><p>“मेरे ऑपरेशन सफल हुआ, धन्यवाद।” – Karim, Thakurganj</p></div>
+    <div class="card"><p>“डॉक्टर और नर्स का व्यवहार बहुत अच्छा।” – Anjali, Terhagachh</p></div>
+    <div class="card"><p>“किशनगंज का No.1 अस्पताल।” – Mukesh, Pothia</p></div>
+  </div>
+</section>
 
-      <h3 class="text-xl font-semibold text-blue-600 mt-10">सुविधाएँ (Facilities)</h3>
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
-        <li>✅ ECG, पैथोलॉजी, फार्मेसी</li>
-        <li>✅ नेब्युलाइज़र, ऑक्सीजन सुविधा</li>
-        <li>✅ जनरल सर्जरी, गायनोकोलॉजी</li>
-        <li>✅ कार्डियोलॉजी, चेस्ट मेडिसिन</li>
-        <li>✅ फिजियोथेरेपी और रिहैबिलिटेशन</li>
-        <li>✅ आइसोलेटेड बर्न वार्ड</li>
-        <li>✅ AC Room, बेबी वार्मर</li>
-        <li>✅ ICU, NICU, OPD, General Ward</li>
-        <li>✅ 24x7 Emergency Services</li>
-      </ul>
-    </div>
-  </section>
+<section>
+  <h2>ℹ️ About Us</h2>
+  <p style="text-align:center; max-width:900px; margin:auto;">Established in 2005, Deepak Hospital, Shanti Chowk, Baansbaari Haat, Kishanganj is the most trusted medical center in the region. With advanced facilities, experienced doctors & compassionate care, we proudly hold a 4.9/5 rating – Kishanganj, Bihar का No.1 अस्पताल.</p>
+</section>
 
-  <!-- Appointment -->
-  <section class="text-center py-12">
-    <a href="https://wa.me/917783022191" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-      📅 WhatsApp पर अपॉइंटमेंट बुक करें
-    </a>
-    <p class="mt-3"><b>संपर्क करें:</b> 7979812332</p>
-  </section>
-
-  <!-- Feedback -->
-  <section class="bg-blue-100 py-12">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-blue-700 border-b-4 border-blue-400 inline-block pb-2">मरीजों की राय (Patient Feedback)</h2>
-      <p class="mt-2 text-lg">⭐ 4.9/5 Rating | किशनगंज, बिहार का No.1 Hospital</p>
-
-      <div class="mt-6 space-y-4">
-        <blockquote class="bg-white p-4 rounded-lg shadow">"बहुत अच्छा इलाज और सेवा। डॉक्टर और नर्स बहुत अनुभवी हैं।" – <b>राम विलास (बहादुरगंज)</b></blockquote>
-        <blockquote class="bg-white p-4 rounded-lg shadow">"मेरे बच्चे की डिलीवरी यहाँ बहुत सुरक्षित तरीके से हुई।" – <b>रीना देवी (ढेंगरुआ)</b></blockquote>
-        <blockquote class="bg-white p-4 rounded-lg shadow">"गाँव में इतना अच्छा हॉस्पिटल मिलना हमारे लिए बड़ी राहत है।" – <b>मो. सलीम (पौआखाली)</b></blockquote>
-        <blockquote class="bg-white p-4 rounded-lg shadow">"हर्निया का ऑपरेशन कराया, अब बिल्कुल ठीक हूँ।" – <b>सुभाष यादव (ठेकहा)</b></blockquote>
-        <blockquote class="bg-white p-4 rounded-lg shadow">"24x7 इमरजेंसी सेवा से हमारी जान बची।" – <b>गुलशन आरा (टेढ़ागाछ)</b></blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-6">
-    <p>© 2005 - 2025 दीपक हॉस्पिटल | All Rights Reserved</p>
-  </footer>
+<div class="contact">
+  <h2>📞 Contact Us</h2>
+  <p>Phone: 7979812332</p>
+  <a class="btn" href="https://wa.me/917783022191" target="_blank">Book Appointment on WhatsApp</a>
+</div>
 
 </body>
 </html>
