@@ -1,127 +1,87 @@
+<!-- ========================================================
+     FILE: index.html
+     Home page — Deepak Hospital (Bahadurganj, Kishanganj)
+     ======================================================== -->
 <!doctype html>
 <html lang="hi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deepak Hospital • Shanti Chowk, Baansbaari Haat — Kishanganj</title>
-  <meta name="description" content="Deepak Hospital, Kishanganj (Bihar) — 24×7 Emergency, ICU/NICU, OPD (11:00–13:00 & 15:00–18:00). Doctors: Dr. Deepak Kumar Sinha (Director), Dr. Roushan Ali (MBBS, FCCM), Dr. Shabab Ahmad (BUMS, CCH) — Diabetes, Dr. S.K. Sinha (MBBS, MD) — General Physician, Dr. Naziya Praween (BUMS) — Gynecology, Dr. B. Soren (MBBS, MS) — General Surgeon, Dr. Akbar Khan (MBBS, MS), Dr. Atif Akram (BDS) — Dental." />
-  <meta name="keywords" content="Deepak Hospital, Kishanganj, Bahadurganj, OPD timings, 24x7 emergency, ICU, NICU, doctors, general surgery, gynecology, dental" />
+  <title>Deepak Hospital – Shanti Chowk, Baansbaari Haat, Bahadurganj, Kishanganj</title>
+  <meta name="description" content="Deepak Hospital, Bahadurganj (Kishanganj) — 24x7 Emergency, ICU/NICU, OPD 11:00–13:00 & 15:00–18:00. Contact: 7979812332 • WhatsApp: 7783022191" />
+  <meta name="keywords" content="Deepak Hospital, Kishanganj, Bahadurganj, OPD timings, 24x7 emergency, doctors, hospital" />
   <meta name="author" content="Deepak Hospital" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Deepak Hospital • Shanti Chowk, Baansbaari Haat — Kishanganj" />
-  <meta property="og:description" content="24×7 Emergency • OPD: 11:00–13:00 & 15:00–18:00. Appointments on WhatsApp: 7783022191" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_IN" />
-  <!-- Twitter Card -->
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Deepak Hospital – Bahadurganj, Kishanganj" />
+  <meta property="og:description" content="24×7 Emergency • OPD: 11:00–13:00 & 15:00–18:00 • Call: 7979812332" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Deepak Hospital — Kishanganj" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --green:#0d7b57; --green-600:#0b5b41; --mint:#f3fbf7; --ink:#0f172a; --ink-2:#475569;
-      --card:#ffffff; --line:#e5e7eb; --accent:#10b981; --warning:#ef4444; --maxw:1180px;
+      --green:#0d7b57;--green-600:#0b5b41;--mint:#f3fbf7;--card:#fff;--line:#e5e7eb;--ink:#0f172a;--maxw:1180px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;scroll-behavior:smooth;font-family:Inter, "Noto Sans Devanagari", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;background:var(--mint);color:var(--ink)}
+    html,body{margin:0;padding:0;font-family:Inter,"Noto Sans Devanagari",system-ui, -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--mint);color:var(--ink)}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:20px}
-    header.hero{background:linear-gradient(135deg,#2e8b57,#3cb371);color:#fff;padding:36px 16px;text-align:center;border-radius:8px;margin:16px}
-    .brand-row{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:8px}
-    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#14b8a6,#0d7b57);display:grid;place-items:center;color:#fff;font-weight:800}
-    h1{margin:0;font-size:28px}
-    p.lead{margin:6px 0 0;color:#e6ffef}
-    nav.top{display:flex;gap:8px;justify-content:center;margin:12px}
-    .btn{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;border:0;cursor:pointer}
-    .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--green);font-weight:700;padding:8px 12px;border-radius:999px}
-    .section{background:#fff;border-radius:12px;padding:20px;margin:16px}
+    header.hero{background:linear-gradient(135deg,#2e8b57,#3cb371);color:#fff;padding:36px;border-radius:10px;text-align:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#14b8a6,#0d7b57);display:inline-grid;place-items:center;font-weight:800}
+    nav.top{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+    .btn{background:var(--green);color:#fff;border:0;padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700}
+    .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--green);padding:8px 12px;border-radius:999px}
+    .section{background:var(--card);padding:18px;border-radius:12px;margin-top:18px}
     .two-col{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
     @media(max-width:900px){.two-col{grid-template-columns:1fr}}
-    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .badge{background:#d1fae5;color:#065f46;padding:6px 10px;border-radius:999px;border:1px solid #a7f3d0;font-size:13px}
-    .grid{display:grid;gap:12px}
-    .card{background:var(--card);border-radius:12px;border:1px solid var(--line);padding:12px}
-    .doctors-list .item{padding:10px;border-bottom:1px dashed var(--line)}
-    .doctors-list .item:last-child{border-bottom:none}
+    .badge{display:inline-block;background:#d1fae5;color:#065f46;padding:6px 10px;border-radius:999px;margin:6px 6px 6px 0}
+    .map-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px}
+    .map-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    footer{background:var(--green-600);color:#d1fae5;text-align:center;padding:14px;border-radius:8px;margin-top:20px}
+    a.link{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px}
     .kicker{font-size:13px;color:#0ea5e9;text-transform:uppercase;letter-spacing:.06em}
-    footer{padding:20px;text-align:center;color:#fff;background:var(--green-600);border-top-left-radius:12px;border-top-right-radius:12px;margin-top:20px}
-    /* Modal */
-    .modal{position:fixed;inset:0;background:rgba(2,6,23,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:60}
-    .modal.active{display:flex}
-    .sheet{width:100%;max-width:560px;background:#fff;border-radius:12px;border:1px solid var(--line);overflow:hidden}
-    .sheet .hd{padding:14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-    .sheet .bd{padding:14px}
-    .field{display:grid;gap:6px;margin:10px 0}
-    .field input,.field select, .field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px}
-    .cta{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
-    .muted{font-size:13px;color:var(--ink-2)}
-    .small{font-size:13px;color:var(--ink-2)}
-    a.map-link{display:inline-block;margin-top:8px;color:var(--green);text-decoration:underline}
+    .small{font-size:13px;color:#475569}
   </style>
 
-  <!-- JSON-LD local business (Hospital) -->
+  <!-- JSON-LD (LocalBusiness / Hospital) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Hospital",
-    "name": "Deepak Hospital",
-    "alternateName": "Deepak Hospital, Shanti Chowk",
-    "description": "Deepak Hospital, Kishanganj — 24x7 Emergency, ICU/NICU, Modern OT, OPD (11:00–13:00 & 15:00–18:00). Experienced doctors across General, Surgery, Gynecology, Dental and Diabetes care.",
-    "url": "",
-    "telephone": "+91-7979812332",
-    "email": "",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Shanti Chowk, Baansbaari Haat",
-      "addressLocality": "Bahadurganj, Kishanganj",
-      "addressRegion": "Bihar",
-      "postalCode": "",
-      "addressCountry": "IN"
+    "@context":"https://schema.org",
+    "@type":"Hospital",
+    "name":"Deepak Hospital",
+    "alternateName":"Deepak Hospital, Shanti Chowk",
+    "description":"Deepak Hospital, Bahadurganj, Kishanganj — 24x7 Emergency, ICU/NICU, Modern OT, OPD 11:00–13:00 & 15:00–18:00.",
+    "url":"",
+    "telephone":"+91-7979812332",
+    "email":"deepakhospitalbansbari@gmail.com",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Shanti Chowk, Baansbaari Haat",
+      "addressLocality":"Bahadurganj, Kishanganj",
+      "addressRegion":"Bihar",
+      "addressCountry":"IN"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-        ],
-        "opens": "11:00",
-        "closes": "13:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-        ],
-        "opens": "15:00",
-        "closes": "18:00"
-      }
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"13:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"15:00","closes":"18:00"}
     ],
-    "sameAs": [],
-    "makesOffer": [],
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "",
-      "longitude": ""
-    },
-    "hasMap": "https://www.google.com/maps?q=Deepak+Hospital+Shanti+Chowk+Baansbaari+Haat+Bahadurganj+Kishanganj"
+    "geo":{"@type":"GeoCoordinates","latitude":26.2888896,"longitude":87.8096216},
+    "hasMap":"https://www.google.com/maps/place/Dr+Deepak+Kumar+sinha+hospital+bahadurganj/@25.939675,86.562472,9z/data=!4m10!1m2!2m1!1sDeepak+Hospital+Shanti+Chowk+Bansbari+Hat+Kishanganj!3m6!1s0x39e5730066b06057:0xfc599f1c36937ecc!8m2!3d26.2888896!4d87.8096216"
   }
   </script>
 </head>
 <body>
   <div class="wrap">
     <header class="hero" role="banner">
-      <div class="brand-row">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center">
         <div class="logo" aria-hidden="true">DH</div>
-        <div>
-          <div style="font-weight:800">Deepak Hospital</div>
-          <small class="small" data-en="Shanti Chowk, Baansbaari Haat • Bahadurganj, Kishanganj" data-hi="शांति चौक, बांसबाड़ी हाट • बहादुरगंज, किशनगंज">Shanti Chowk, Baansbaari Haat • Bahadurganj, Kishanganj</small>
-        </div>
       </div>
+      <h1 data-en="Deepak Hospital – Shanti Chowk, Baansbaari Haat, Bahadurganj" data-hi="दीपक हॉस्पिटल – शांति चौक, बांसबाड़ी हाट, बहादुरगंज">Deepak Hospital – Shanti Chowk, Baansbaari Haat, Bahadurganj</h1>
+      <p class="small" data-en="24×7 Emergency • OPD: 11:00–13:00 & 15:00–18:00" data-hi="24×7 इमरजेंसी • रोगी देखने का समय: 11:00–13:00 एवं 15:00–18:00">24×7 Emergency • OPD: 11:00–13:00 & 15:00–18:00</p>
 
-      <h1 data-en="WELCOME TO DEEPAK HOSPITAL" data-hi="दीपक हॉस्पिटल में आपका स्वागत है">WELCOME TO DEEPAK HOSPITAL</h1>
-      <p class="lead" data-en="24×7 Emergency • ICU • NICU • Modern OT • Experienced Staff" data-hi="24×7 इमरजेंसी • ICU • NICU • आधुनिक OT • अनुभवी स्टाफ">24×7 Emergency • ICU • NICU • Modern OT • Experienced Staff</p>
-
-      <nav class="top" aria-label="actions">
-        <button class="btn" onclick="openAppt()">📅 <span data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</span></button>
-        <a class="btn-ghost" href="tel:7979812332" aria-label="Call Deepak Hospital">📞 <span data-en="Call: 7979812332" data-hi="कॉल: 7979812332">Call: 7979812332</span></a>
+      <nav class="top" aria-label="Main navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="doctors.html">Doctors</a>
+        <a class="link" href="reviews.html">Feedback & Contact</a>
+        <button class="btn" onclick="openAppt()">Book Appointment</button>
         <div style="display:flex;gap:6px;align-items:center">
           <button class="btn-ghost" onclick="setLang('en')">EN</button>
           <button class="btn-ghost" onclick="setLang('hi')">हिन्दी</button>
@@ -129,238 +89,334 @@
       </nav>
     </header>
 
-    <!-- About & OPD -->
-    <section class="section two-col" id="about" aria-labelledby="about-heading">
-      <div>
-        <div class="kicker" data-en="About Us" data-hi="हमारे बारे में">About Us</div>
-        <h2 id="about-heading" style="margin:8px 0" data-en="Trusted Multispeciality Care since 2005" data-hi="2005 से विश्वसनीय मल्टीस्पेशलिटी देखभाल">Trusted Multispeciality Care since 2005</h2>
-        <p class="small" data-en="Director: Dr. Deepak Kumar Sinha • Rating: 4.9/5 — Kishanganj's No.1 Hospital" data-hi="निदेशक: डॉ. दीपक कुमार सिन्हा • रेटिंग: 4.9/5 — किशनगंज का नं.1 अस्पताल">Director: Dr. Deepak Kumar Sinha • Rating: 4.9/5 — Kishanganj's No.1 Hospital</p>
+    <section class="section" id="about">
+      <div class="two-col">
+        <div>
+          <div class="kicker" data-en="About Us" data-hi="हमारे बारे में">About Us</div>
+          <h2 data-en="Trusted Multispeciality Care since 2005" data-hi="2005 से विश्वसनीय मल्टीस्पेशलिटी देखभाल">Trusted Multispeciality Care since 2005</h2>
+          <p class="small" data-en="Director: Dr. Deepak Kumar Sinha • Rating: 4.9/5 — Kishanganj's No.1 Hospital" data-hi="निदेशक: डॉ. दीपक कुमार सिन्हा • रेटिंग: 4.9/5 — किशनगंज का नं.1 अस्पताल">
+            Director: Dr. Deepak Kumar Sinha • Rating: 4.9/5 — Kishanganj's No.1 Hospital
+          </p>
 
-        <div class="badges" aria-hidden="true">
-          <span class="badge" data-en="24×7 Emergency" data-hi="24×7 इमरजेंसी">24×7 Emergency</span>
-          <span class="badge" data-en="ICU • NICU • OPD" data-hi="ICU • NICU • OPD">ICU • NICU • OPD</span>
-          <span class="badge" data-en="Modern OT" data-hi="मॉडर्न OT">Modern OT</span>
+          <div style="margin-top:12px">
+            <span class="badge" data-en="OPD: 11:00–13:00" data-hi="OPD: 11:00–13:00">OPD: 11:00–13:00</span>
+            <span class="badge" data-en="OPD: 15:00–18:00" data-hi="OPD: 15:00–18:00">OPD: 15:00–18:00</span>
+            <span class="badge" data-en="Emergency • 24×7" data-hi="इमरजेंसी • 24×7">Emergency • 24×7</span>
+          </div>
+
+          <p class="small" style="margin-top:12px" data-en="We provide 24x7 emergency, ICU/NICU, modern OT, pathology and pharmacy with experienced doctors and nursing staff." data-hi="हम 24×7 इमरजेंसी, ICU/NICU, आधुनिक ओटी, पैथोलॉजी व फार्मेसी अनुभवी डॉक्टर व नर्सिंग टीम के साथ प्रदान करते हैं।">
+            We provide 24x7 emergency, ICU/NICU, modern OT, pathology and pharmacy with experienced doctors and nursing staff.
+          </p>
+
+          <div style="margin-top:12px">
+            <a class="btn" href="doctors.html">Meet Our Doctors</a>
+            <a class="btn-ghost" href="reviews.html">Patient Feedback</a>
+          </div>
         </div>
 
-        <h3 style="margin-top:16px" data-en="OPD Timing" data-hi="रोगी देखने का समय">OPD Timing</h3>
-        <p class="small" data-en="Patient Consultation Time: 11:00 AM – 1:00 PM & 3:00 PM – 6:00 PM" data-hi="रोगी देखने का समय: प्रातः 11:00 बजे — 1:00 बजे एवं 3:00 बजे — 6:00 बजे">
-          Patient Consultation Time: 11:00 AM – 1:00 PM & 3:00 PM – 6:00 PM
-        </p>
+        <aside>
+          <div class="section" style="padding:12px">
+            <h4 class="kicker" data-en="Contact" data-hi="संपर्क">Contact</h4>
+            <p class="small">📞 <a href="tel:7979812332">7979812332</a><br>💬 WhatsApp: <a href="https://wa.me/917783022191" target="_blank" rel="noopener">7783022191</a><br>✉️ <a href="mailto:deepakhospitalbansbari@gmail.com">deepakhospitalbansbari@gmail.com</a></p>
 
-        <div style="margin-top:12px">
-          <a class="btn" href="https://wa.me/917783022191" target="_blank" rel="noopener">💬 <span data-en="WhatsApp: 7783022191" data-hi="व्हाट्सऐप: 7783022191">WhatsApp: 7783022191</span></a>
-          <a class="map-link" href="https://www.google.com/maps?q=Deepak+Hospital+Shanti+Chowk+Baansbaari+Haat+Bahadurganj+Kishanganj" target="_blank" rel="noopener" data-en="Open in Google Maps" data-hi="गूगल मैप में खोलें">Open in Google Maps</a>
-        </div>
+            <div style="margin-top:8px">
+              <div class="map-embed" aria-hidden="true">
+                <iframe title="Deepak Hospital Map"
+                  src="https://www.google.com/maps/place/Dr+Deepak+Kumar+sinha+hospital+bahadurganj/@25.939675,86.562472,9z/data=!4m10!1m2!2m1!1sDeepak+Hospital+Shanti+Chowk+Bansbari+Hat+Kishanganj!3m6!1s0x39e5730066b06057:0xfc599f1c36937ecc!8m2!3d26.2888896!4d87.8096216!15sCjREZWVwYWsgSG9zcGl0YWwgU2hhbnRpIENob3drIEJhbnNiYXJpIEhhdCBLaXNoYW5nYW5qWjYiNGRlZXBhayBob3NwaXRhbCBzaGFudGkgY2hvd2sgYmFuc2JhcmkgaGF0IGtpc2hhbmdhbmqSAQhob3NwaXRhbJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQycFZORmRJYUhWaFYwNVJZbFJrVUdKVmREUlpNRkoxV0RJNVVsUnNSUkFCqgGYAQoJL20vMDJkbDF5EAEqLSIpZGVlcGFrIGhvc3BpdGFsIHNoYW50aSBjaG93ayBiYW5zYmFyaSBoYXQoADIgEAEiHLGz_e_cI0H9G1nQh5G6dFVQIR1eIsd0pJLeIjgyOBACIjRkZWVwYWsgaG9zcGl0YWwgc2hhbnRpIGNob3drIGJhbnNiYXJpIGhhdCBraXNoYW5nYW5q4AEA-gEECAAQEQ!16s%2Fg%2F11ww6b81zb?hl=en-US&output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div style="margin-top:8px"><a href="https://www.google.com/maps/place/Dr+Deepak+Kumar+sinha+hospital+bahadurganj/" target="_blank" rel="noopener" class="small">Open in Google Maps</a></div>
+            </div>
+          </div>
+        </aside>
       </div>
-
-      <aside class="card" aria-labelledby="facilities-heading">
-        <h4 id="facilities-heading" class="kicker" data-en="Facilities" data-hi="सुविधाएँ">Facilities</h4>
-        <ul style="margin:10px 0;padding-left:18px" class="small">
-          <li data-en="24×7 Emergency & Ambulance" data-hi="24×7 इमरजेंसी व एम्बुलेंस">24×7 Emergency & Ambulance</li>
-          <li data-en="ICU • NICU • Operation Theatres" data-hi="आई.सी.यू. • एन.आई.सी.यू. • ओ.टी.">ICU • NICU • Operation Theatres</li>
-          <li data-en="Pathology • Pharmacy • Oxygen" data-hi="पैथोलॉजी • फार्मेसी • ऑक्सीजन">Pathology • Pharmacy • Oxygen</li>
-        </ul>
-      </aside>
-    </section>
-
-    <!-- Services -->
-    <section class="section" id="services" aria-labelledby="services-heading">
-      <div class="kicker" data-en="Services" data-hi="सेवाएँ">Services</div>
-      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:12px">
-        <div class="card">
-          <strong data-en="Normal & Cesarean Delivery" data-hi="सामान्य एवं सीजेरियन डिलीवरी">Normal & Cesarean Delivery</strong>
-          <div class="small" data-en="Safe maternity care" data-hi="सुरक्षित मातृत्व देखभाल">Safe maternity care</div>
-        </div>
-        <div class="card">
-          <strong data-en="General & Laparoscopic Surgery" data-hi="जनरल व लेप्रोस्कोपिक सर्जरी">General & Laparoscopic Surgery</strong>
-          <div class="small" data-en="Gallbladder, Hernia, Appendix" data-hi="गॉलब्लैडर, हर्निया, अपेंडिक्स">Gallbladder, Hernia, Appendix</div>
-        </div>
-        <div class="card">
-          <strong data-en="Chest Medicine & Asthma" data-hi="चेस्ट मेडिसिन व दमा">Chest Medicine & Asthma</strong>
-          <div class="small" data-en="Nebulizer & Oxygen support" data-hi="नेब्युलाइज़र व ऑक्सीजन सपोर्ट">Nebulizer & Oxygen support</div>
-        </div>
-        <div class="card">
-          <strong data-en="Physiotherapy & Rehabilitation" data-hi="फिजियोथेरेपी व पुनर्वास">Physiotherapy & Rehabilitation</strong>
-          <div class="small" data-en="Experienced therapists" data-hi="अनुभवी थेरेपिस्ट">Experienced therapists</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Doctors -->
-    <section class="section" id="doctors" aria-labelledby="doctors-heading">
-      <div class="kicker" data-en="Our Doctors" data-hi="हमारे डॉक्टर">Our Doctors</div>
-      <div class="card doctors-list" style="margin-top:12px">
-        <div class="item"><strong data-en="Dr. Deepak Kumar Sinha" data-hi="डॉ. दीपक कुमार सिन्हा">Dr. Deepak Kumar Sinha</strong> — <span class="small" data-en="Director" data-hi="निदेशक">Director</span></div>
-
-        <div class="item"><strong data-en="Dr. Roushan Ali" data-hi="डॉ. रौशन अली">Dr. Roushan Ali</strong> — <span class="small">MBBS, FCCM — <span data-en="General Physician" data-hi="जनरल फिजिशियन">General Physician</span></span></div>
-
-        <div class="item"><strong data-en="Dr. Shabab Ahmad" data-hi="डॉ. शबाब अहमद">Dr. Shabab Ahmad</strong> — <span class="small">BUMS, CCH — <span data-en="Diabetes Specialist" data-hi="डायबिटीज स्पेशलिस्ट">Diabetes Specialist</span></span></div>
-
-        <div class="item"><strong data-en="Dr. S.K. Sinha" data-hi="डॉ. एस.के. सिन्हा">Dr. S.K. Sinha</strong> — <span class="small">MBBS, MD — <span data-en="General Physician" data-hi="जनरल फिजिशियन">General Physician</span></span></div>
-
-        <div class="item"><strong data-en="Dr. Naziya Praween" data-hi="डॉ. नाज़िया परवीन">Dr. Naziya Praween</strong> — <span class="small">BUMS — <span data-en="Gynecology Specialist" data-hi="स्त्री रोग विशेषज्ञ">Gynecology Specialist</span></span></div>
-
-        <div class="item"><strong data-en="Dr. B. Soren" data-hi="डॉ. बी. सोरेन">Dr. B. Soren</strong> — <span class="small">MBBS, MS — <span data-en="General Surgeon" data-hi="जनरल सर्जन">General Surgeon</span></span></div>
-
-        <div class="item"><strong data-en="Dr. Akbar Khan" data-hi="डॉ. अकबर खान">Dr. Akbar Khan</strong> — <span class="small">MBBS, MS — <span data-en="General Surgeon" data-hi="जनरल सर्जन">General Surgeon</span></span></div>
-
-        <div class="item"><strong data-en="Dr. Atif Akram" data-hi="डॉ. अतिफ अकराम">Dr. Atif Akram</strong> — <span class="small">BDS — <span data-en="Dental Surgeon" data-hi="डेंटल सर्जन">Dental Surgeon</span></span></div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="section" id="reviews" aria-labelledby="reviews-heading">
-      <div class="kicker" data-en="Patient Feedback" data-hi="मरीजों की राय">Patient Feedback</div>
-      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:12px">
-        <div class="card"><strong>4.9/5 ⭐</strong> — <div class="small" data-en="Kishanganj’s No.1 Hospital" data-hi="किशनगंज का नं.1 अस्पताल">Kishanganj’s No.1 Hospital</div></div>
-        <div class="card">“<span data-en="Safe delivery and caring staff." data-hi="सुरक्षित डिलीवरी और सहयोगी स्टाफ।">Safe delivery and caring staff.</span>” — रीना देवी</div>
-        <div class="card">“<span data-en="Hernia surgery successful, quick recovery." data-hi="हर्निया ऑपरेशन सफल, जल्दी रिकवरी।">Hernia surgery successful, quick recovery.</span>” — सुभाष यादव</div>
-      </div>
-    </section>
-
-    <!-- Contact & Map -->
-    <section class="section" id="contact" aria-labelledby="contact-heading">
-      <div class="kicker" id="contact-heading" data-en="Appointments & Contact" data-hi="अपॉइंटमेंट व संपर्क">Appointments & Contact</div>
-
-      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <button class="btn" onclick="openAppt()">📲 <span data-en="Book on WhatsApp" data-hi="व्हाट्सऐप पर बुक करें">Book on WhatsApp</span></button>
-        <a class="btn-ghost" href="tel:7979812332">📞 <span data-en="Call: 7979812332" data-hi="कॉल: 7979812332">Call: 7979812332</span></a>
-      </div>
-
-      <div style="margin-top:12px" class="small" data-en="Find us on Google Maps (exact location shown below)." data-hi="नीचे हमारा सटीक स्थान गूगल मैप में दिखाया गया है।">
-        Find us on Google Maps (exact location shown below).
-      </div>
-
-      <!-- Exact location embed (uses query string of the exact address) -->
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin-top:12px">
-        <iframe
-          title="Deepak Hospital Location"
-          src="https://www.google.com/maps?q=Deepak+Hospital+Shanti+Chowk+Baansbaari+Haat+Bahadurganj+Kishanganj&output=embed"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
     </section>
 
     <footer>
-      © 2005–2025 Deepak Hospital • Shanti Chowk, Baansbaari Haat, Bahadurganj, Kishanganj • All Rights Reserved
+      © 2005–2025 Deepak Hospital • Shanti Chowk, Baansbaari Haat, Bahadurganj, Kishanganj
     </footer>
   </div>
 
   <!-- Appointment Modal -->
-  <div class="modal" id="appt" role="dialog" aria-modal="true" aria-labelledby="appt-title">
-    <div class="sheet" role="document">
-      <div class="hd">
+  <div id="appt" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.55);align-items:center;justify-content:center;z-index:60">
+    <div style="background:#fff;max-width:620px;width:96%;margin:auto;border-radius:12px;overflow:hidden">
+      <div style="padding:14px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
         <strong id="appt-title" data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</strong>
-        <button class="btn-ghost" onclick="closeAppt()" aria-label="Close">✕</button>
+        <button onclick="closeAppt()" style="border:0;background:#fff;cursor:pointer">✕</button>
       </div>
-      <div class="bd">
-        <div id="step1" class="step">
-          <div class="field">
-            <label data-en="Preferred Time" data-hi="पसंदीदा समय">Preferred Time</label>
-            <select id="time">
-              <option value="" selected data-en="Select time" data-hi="समय चुनें">Select time</option>
-              <option>11:00–13:00</option>
-              <option>15:00–18:00</option>
-            </select>
-          </div>
-          <div class="field">
-            <label data-en="Preferred Date" data-hi="पसंदीदा तारीख">Preferred Date</label>
-            <input type="date" id="date">
-          </div>
-          <div class="field">
-            <label data-en="Ailment / Department" data-hi="रोग / विभाग">Ailment / Department</label>
-            <select id="ailment">
-              <option value="" selected data-en="Select" data-hi="चुनें">Select</option>
-              <option data-en="Normal Delivery" data-hi="सामान्य डिलीवरी">Normal Delivery</option>
-              <option data-en="Cesarean Delivery" data-hi="सिजेरियन डिलीवरी">Cesarean Delivery</option>
-              <option data-en="Gallbladder Stone" data-hi="गॉलब्लैडर पथरी">Gallbladder Stone</option>
-              <option data-en="Kidney Stone" data-hi="किडनी पथरी">Kidney Stone</option>
-              <option data-en="Chest/Asthma" data-hi="चेस्ट/दमा">Chest/Asthma</option>
-              <option data-en="Dental" data-hi="डेंटल">Dental</option>
-              <option data-en="Other" data-hi="अन्य">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label data-en="Patient Name" data-hi="मरीज का नाम">Patient Name</label>
-            <input id="name" placeholder="Your Name / आपका नाम">
-          </div>
-          <div class="field">
-            <label data-en="Phone (WhatsApp preferred)" data-hi="फोन (व्हाट्सऐप)">Phone (WhatsApp preferred)</label>
-            <input id="phone" placeholder="10-digit / 10 अंकों का">
-          </div>
-          <div class="field">
-            <label data-en="Notes (optional)" data-hi="नोट्स (वैकल्पिक)">Notes (optional)</label>
-            <textarea id="notes" rows="3" placeholder="Any detail / कोई जानकारी"></textarea>
-            <div class="muted" data-en="We will confirm on WhatsApp." data-hi="हम WhatsApp पर पुष्टि करेंगे।">We will confirm on WhatsApp.</div>
-          </div>
+      <div style="padding:14px">
+        <label data-en="Preferred Time" data-hi="पसंदीदा समय">Preferred Time</label>
+        <select id="time"><option value="">Select</option><option>11:00–13:00</option><option>15:00–18:00</option></select>
 
-          <div class="cta">
-            <button class="btn-ghost" onclick="closeAppt()" data-en="Cancel" data-hi="रद्द करें">Cancel</button>
-            <button class="btn" onclick="sendWA()" data-en="Send on WhatsApp" data-hi="WhatsApp पर भेजें">Send on WhatsApp</button>
-          </div>
+        <label style="display:block;margin-top:10px" data-en="Preferred Date" data-hi="पसंदीदा तारीख">Preferred Date</label>
+        <input type="date" id="date" style="padding:8px;width:100%">
+
+        <label style="display:block;margin-top:10px" data-en="Ailment / Department" data-hi="रोग / विभाग">Ailment / Department</label>
+        <select id="ailment" style="width:100%;padding:8px">
+          <option value="">Select</option>
+          <option>General</option><option>Delivery</option><option>Surgery</option><option>Dental</option><option>Chest/Asthma</option><option>Other</option>
+        </select>
+
+        <label style="display:block;margin-top:10px" data-en="Patient Name" data-hi="मरीज का नाम">Patient Name</label>
+        <input id="name" placeholder="Name / नाम" style="width:100%;padding:8px">
+
+        <label style="display:block;margin-top:10px" data-en="Phone (WhatsApp preferred)" data-hi="फोन (व्हाट्सऐप)">Phone (WhatsApp preferred)</label>
+        <input id="phone" placeholder="10-digit" style="width:100%;padding:8px">
+
+        <label style="display:block;margin-top:10px" data-en="Notes (optional)" data-hi="नोट्स (वैकल्पिक)">Notes (optional)</label>
+        <textarea id="notes" rows="3" style="width:100%;padding:8px"></textarea>
+
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+          <button onclick="closeAppt()" class="btn-ghost">Cancel</button>
+          <button onclick="sendWA()" class="btn">Send on WhatsApp</button>
         </div>
       </div>
     </div>
   </div>
 
 <script>
-  // Language functions
+  // Language toggle: default Hindi (hi)
   function setLang(lang){
     document.querySelectorAll('[data-en]').forEach(el=>{
-      const val = el.getAttribute('data-' + lang);
-      if(val !== null) el.innerHTML = val;
+      const v = el.getAttribute('data-' + lang);
+      if(v !== null) el.innerHTML = v;
     });
     document.documentElement.lang = (lang === 'hi' ? 'hi' : 'en');
     localStorage.setItem('dh-lang', lang);
   }
-  (function(){ const saved = localStorage.getItem('dh-lang') || 'hi'; setLang(saved); })();
+  (function(){ setLang(localStorage.getItem('dh-lang') || 'hi'); })();
 
-  // Modal actions
+  // Appointment modal
   const ap = document.getElementById('appt');
-  function openAppt(){ ap.classList.add('active'); setMinDate(); }
-  function closeAppt(){ ap.classList.remove('active'); }
+  function openAppt(){ ap.style.display = 'flex'; setMinDate(); }
+  function closeAppt(){ ap.style.display = 'none'; }
+  function setMinDate(){ const d=new Date(); const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0'); const el=document.getElementById('date'); if(el) el.min = `${y}-${m}-${dd}`; }
 
-  // Set minimum date to today
-  function setMinDate(){
-    const d = new Date();
-    const yyyy = d.getFullYear();
-    const mm = String(d.getMonth()+1).padStart(2,'0');
-    const dd = String(d.getDate()).padStart(2,'0');
-    const el = document.getElementById('date');
-    if(el) el.min = `${yyyy}-${mm}-${dd}`;
-  }
-
-  // Build WhatsApp message and open
+  // Build WA message and open
   function sendWA(){
     const lang = document.documentElement.lang || 'hi';
     const get = id => (document.getElementById(id) ? document.getElementById(id).value.trim() : '');
-    const t = get('time'), d = get('date'), a = get('ailment'), n = get('name'), p = get('phone'), notes = get('notes');
-    if(!d || !p){
-      alert(lang==='hi' ? 'कृपया तारीख और फोन नंबर दर्ज करें।' : 'Please enter date and phone.');
-      return;
-    }
-    const header = (lang==='hi') ? 'अपॉइंटमेंट अनुरोध' : 'Appointment Request';
+    const t=get('time'), d=get('date'), a=get('ailment'), n=get('name'), p=get('phone'), notes=get('notes');
+    if(!d || !p){ alert(lang==='hi' ? 'कृपया तारीख और फोन दर्ज करें।' : 'Please enter date and phone.'); return; }
+    const header = (lang==='hi' ? 'अपॉइंटमेंट अनुरोध' : 'Appointment Request');
     const lines = [
       `${header} — Deepak Hospital`,
-      (lang==='hi') ? `समय: ${t || '-'}` : `Time: ${t || '-'}`,
-      (lang==='hi') ? `तारीख: ${d}` : `Date: ${d}`,
-      (lang==='hi') ? `रोग/विभाग: ${a || '-'}` : `Ailment: ${a || '-'}`,
-      n ? ((lang==='hi') ? `नाम: ${n}` : `Name: ${n}`) : '',
-      p ? ((lang==='hi') ? `फोन: ${p}` : `Phone: ${p}`) : '',
-      notes ? ((lang==='hi') ? `नोट्स: ${notes}` : `Notes: ${notes}`) : ''
+      (lang==='hi' ? `समय: ${t||'-'}` : `Time: ${t||'-'}`),
+      (lang==='hi' ? `तारीख: ${d}` : `Date: ${d}`),
+      (lang==='hi' ? `विभाग: ${a||'-'}` : `Ailment: ${a||'-'}`),
+      n ? (lang==='hi' ? `नाम: ${n}` : `Name: ${n}`) : '',
+      p ? (lang==='hi' ? `फोन: ${p}` : `Phone: ${p}`) : '',
+      notes ? (lang==='hi' ? `नोट्स: ${notes}` : `Notes: ${notes}`) : ''
     ].filter(Boolean).join('%0A');
-
     const waNumber = '917783022191'; // appointment WhatsApp
     const url = `https://wa.me/${waNumber}?text=${lines}`;
-    window.open(url, '_blank');
-    closeAppt();
+    window.open(url,'_blank'); closeAppt();
   }
 
-  // Close modal on backdrop or Esc
-  ap.addEventListener('click', (e) => { if(e.target === ap) closeAppt(); });
-  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeAppt(); });
+  // Close modal on ESC
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeAppt(); });
+</script>
+</body>
+</html>
+
+<!-- ========================================================
+     FILE: doctors.html
+     Doctors & OPD page
+     ======================================================== -->
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepak Hospital — Doctors & OPD</title>
+  <meta name="description" content="Meet the medical team at Deepak Hospital. OPD timings and 24x7 emergency service." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#0d7b57;--mint:#f3fbf7;--card:#fff;--line:#e5e7eb;--ink:#0f172a;--maxw:1180px}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,"Noto Sans Devanagari",system-ui, -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--mint);color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:18px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .nav a{margin-left:10px;text-decoration:none;color:var(--green)}
+    .section{background:var(--card);padding:18px;border-radius:10px;margin-top:12px}
+    .doctors{display:grid;gap:12px}
+    .doc{padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff}
+    .opd{margin-top:12px;padding:12px;border-radius:8px;background:#f9fffb;border:1px solid #e6f6ee}
+    .badge{display:inline-block;background:#d1fae5;color:#065f46;padding:6px 10px;border-radius:999px}
+    footer{margin-top:12px;padding:12px;text-align:center;background:var(--green-600);color:#d1fae5;border-radius:6px}
+    .small{font-size:13px;color:#475569}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <strong style="font-size:18px">Deepak Hospital</strong><br><span class="small">Bahadurganj, Kishanganj</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="reviews.html">Feedback</a>
+        <button onclick="openAppt()" style="background:var(--green);color:#fff;border:0;padding:8px 12px;border-radius:8px">Book</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('hi')">HI</button>
+      </nav>
+    </header>
+
+    <section class="section" id="doctors">
+      <div class="kicker" style="color:#0ea5e9;text-transform:uppercase">Our Doctors</div>
+      <h2 style="margin:8px 0" data-en="Experienced medical team" data-hi="अनुभवी मेडिकल टीम">Experienced medical team</h2>
+
+      <div class="doctors" id="list" role="list">
+        <div class="doc" role="listitem"><strong data-en="Dr. Deepak Kumar Sinha" data-hi="डॉ. दीपक कुमार सिन्हा">Dr. Deepak Kumar Sinha</strong> — <span class="small" data-en="Director" data-hi="निदेशक">Director</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. Roushan Ali" data-hi="डॉ. रौशन अली">Dr. Roushan Ali</strong> — MBBS, FCCM — <span class="small" data-en="General Physician" data-hi="जनरल फिजिशियन">General Physician</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. Shabab Ahmad" data-hi="डॉ. शबाब अहमद">Dr. Shabab Ahmad</strong> — BUMS, CCH — <span class="small" data-en="Diabetes Specialist" data-hi="डायबिटीज स्पेशलिस्ट">Diabetes Specialist</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. S.K. Sinha" data-hi="डॉ. एस.के. सिन्हा">Dr. S.K. Sinha</strong> — MBBS, MD — <span class="small" data-en="General Physician" data-hi="जनरल फिजिशियन">General Physician</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. Naziya Praween" data-hi="डॉ. नाज़िया परवीन">Dr. Naziya Praween</strong> — BUMS — <span class="small" data-en="Gynecology Specialist" data-hi="स्त्री रोग विशेषज्ञ">Gynecology Specialist</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. B. Soren" data-hi="डॉ. बी. सोरेन">Dr. B. Soren</strong> — MBBS, MS — <span class="small" data-en="General Surgeon" data-hi="जनरल सर्जन">General Surgeon</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. Akbar Khan" data-hi="डॉ. अकबर खान">Dr. Akbar Khan</strong> — MBBS, MS — <span class="small" data-en="General Surgeon" data_hi="जनरल सर्जन">General Surgeon</span></div>
+        <div class="doc" role="listitem"><strong data-en="Dr. Atif Akram" data_hi="डॉ. अतिफ अकराम">Dr. Atif Akram</strong> — BDS — <span class="small" data-en="Dental Surgeon" data-hi="डेंटल सर्जन">Dental Surgeon</span></div>
+      </div>
+
+      <div class="opd" aria-live="polite">
+        <div style="display:flex;gap:12px;align-items:center">
+          <span class="badge">OPD</span>
+          <div>
+            <div><strong data-en="Patient Consultation Time" data-hi="रोगी देखने का समय">Patient Consultation Time</strong></div>
+            <div class="small" data-en="11:00 AM – 1:00 PM & 3:00 PM – 6:00 PM" data-hi="प्रातः 11:00 — 1:00 व 3:00 — 6:00">11:00 AM – 1:00 PM & 3:00 PM – 6:00</div>
+            <div style="margin-top:6px;color:#ef4444;font-weight:700" data-en="Emergency Service — 24×7" data-hi="इमरजेंसी सेवा — 24×7">Emergency Service — 24×7</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2005–2025 Deepak Hospital — Bahadurganj, Kishanganj
+    </footer>
+  </div>
+
+  <!-- Appointment modal (reuse) -->
+  <div id="appt" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.55);align-items:center;justify-content:center;z-index:60">
+    <div style="background:#fff;max-width:620px;width:96%;margin:auto;border-radius:12px;overflow:hidden">
+      <div style="padding:14px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
+        <strong>Book Appointment</strong>
+        <button onclick="closeAppt()">✕</button>
+      </div>
+      <div style="padding:14px">
+        <label>Preferred Time</label>
+        <select id="time2"><option value="">Select</option><option>11:00–13:00</option><option>15:00–18:00</option></select>
+        <label style="display:block;margin-top:8px">Preferred Date</label>
+        <input type="date" id="date2" style="width:100%;padding:8px">
+        <label style="display:block;margin-top:8px">Phone</label>
+        <input id="phone2" placeholder="10-digit" style="width:100%;padding:8px">
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px">
+          <button onclick="closeAppt()" style="padding:8px 12px">Cancel</button>
+          <button onclick="sendWA2()" style="background:var(--green);color:#fff;border:0;padding:8px 12px">Send WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function setLang(lang){ document.querySelectorAll('[data-en]').forEach(el=>{ const v=el.getAttribute('data-'+lang); if(v!==null) el.innerHTML=v; }); localStorage.setItem('dh-lang', lang); document.documentElement.lang=(lang==='hi'?'hi':'en'); }
+  (function(){ setLang(localStorage.getItem('dh-lang')||'hi'); })();
+
+  function openAppt(){ document.getElementById('appt').style.display='flex'; setMinDate2(); }
+  function closeAppt(){ document.getElementById('appt').style.display='none'; }
+  function setMinDate2(){ const d=new Date(); const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0'); document.getElementById('date2').min=`${y}-${m}-${dd}`; }
+  function sendWA2(){ const t=document.getElementById('time2').value, d=document.getElementById('date2').value, p=document.getElementById('phone2').value.trim(); if(!d||!p){ alert('Please enter date and phone.'); return; } const lines = ['Appointment Request — Deepak Hospital', `Time: ${t||'-'}`, `Date: ${d}`, `Phone: ${p}`].join('%0A'); window.open(`https://wa.me/917783022191?text=${lines}`,'_blank'); closeAppt(); }
+</script>
+</body>
+</html>
+
+<!-- ========================================================
+     FILE: reviews.html
+     Patient Feedback & Contact page
+     ======================================================== -->
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepak Hospital — Patient Feedback & Contact</title>
+  <meta name="description" content="Patient feedback for Deepak Hospital. Read 15+ patient reviews and find contact & location details." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#0d7b57;--mint:#f3fbf7;--card:#fff;--line:#e5e7eb;--ink:#0f172a;--maxw:1180px}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,"Noto Sans Devanagari",system-ui, -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--mint);color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:18px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    .section{background:var(--card);padding:18px;border-radius:10px;margin-top:12px}
+    .feedback{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .fb{background:#f9fffb;border-left:4px solid var(--green);padding:12px;border-radius:6px}
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:12px}
+    .map{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px}
+    .map iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    footer{margin-top:12px;padding:12px;text-align:center;background:var(--green-600);color:#d1fae5;border-radius:6px}
+    .small{font-size:13px;color:#475569}
+    nav a{margin-left:8px;color:var(--green);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div><strong>Deepak Hospital</strong><div class="small">Bahadurganj, Kishanganj</div></div>
+      <nav>
+        <a href="index.html">Home</a> | <a href="doctors.html">Doctors</a> | <a href="reviews.html">Feedback</a>
+        <button onclick="setLang('en')">EN</button><button onclick="setLang('hi')">HI</button>
+      </nav>
+    </header>
+
+    <section class="section" id="feedback">
+      <h2 data-en="Patient Feedback" data-hi="मरीजों की राय">Patient Feedback</h2>
+      <p class="small" data-en="Real local reviews from patients & families" data-hi="मरीजों व परिवारों की राय">Real local reviews from patients & families</p>
+
+      <div class="feedback" style="margin-top:12px">
+        <div class="fb">“साफ-सफाई अच्छी है, डॉक्टर व नर्स ने अच्छा व्यवहार किया।” — सीमा देवी</div>
+        <div class="fb">“24×7 इमरजेंसी ने समय पर मदद की।” — मुकेश कुमार</div>
+        <div class="fb">“हर्निया ऑपरेशन सफल, तेजी से रिकवरी।” — राजेश यादव</div>
+        <div class="fb">“डायबिटीज पर अच्छी सलाह मिली।” — सुमन कुमारी</div>
+        <div class="fb">“डेंटल ट्रीटमेंट आरामदायक था।” — अनीता देवी</div>
+        <div class="fb">“डिलीवरी में पूरा सपोर्ट मिला।” — रीता देवी</div>
+        <div class="fb">“OPD समय पर डॉक्टर उपलब्ध थे।” — अमित शर्मा</div>
+        <div class="fb">“नर्सिंग स्टाफ बहुत मददगार।” — Rekha Devi</div>
+        <div class="fb">“इमरजेंसी में तुरंत दवा व टेस्ट मिले।” — रमेश पाल</div>
+        <div class="fb">“परिवार के साथ व्यवहार अच्छा था।” — नीलम सिंह</div>
+        <div class="fb">“बच्चे की केयर बहुत अच्छा।” — बिंदु कुमार</div>
+        <div class="fb">“अच्छा मार्गदर्शन और रिस्क समझाया गया।” — विजय चौधरी</div>
+        <div class="fb">“फार्मेसी सुविधा मददगार रही।” — साक्षी मिश्रा</div>
+        <div class="fb">“रोगी को समय पर भर्ती कर लिया गया।” — सुरेश यादव</div>
+        <div class="fb">“कुल मिलाकर संतुष्टि।” — नीरज सिंह</div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2 data-en="Contact & Location" data-hi="संपर्क व स्थान">Contact & Location</h2>
+      <div class="contact" style="margin-top:12px">
+        <div>
+          <p><strong>Address</strong><br>Deepak Hospital, Shanti Chowk, Baansbaari Haat, Bahadurganj, Kishanganj, Bihar</p>
+          <p><strong>Phone</strong><br><a href="tel:7979812332">7979812332</a></p>
+          <p><strong>WhatsApp (Appointments)</strong><br><a href="https://wa.me/917783022191" target="_blank" rel="noopener">7783022191</a></p>
+          <p><strong>Email</strong><br><a href="mailto:deepakhospitalbansbari@gmail.com">deepakhospitalbansbari@gmail.com</a></p>
+          <p class="small">OPD: 11:00–13:00 & 15:00–18:00<br><strong style="color:#ef4444">Emergency Service — 24×7</strong></p>
+        </div>
+
+        <div>
+          <div class="map" aria-hidden="true">
+            <iframe title="Deepak Hospital Map"
+              src="https://www.google.com/maps/place/Dr+Deepak+Kumar+sinha+hospital+bahadurganj/@25.939675,86.562472,9z/data=!4m10!1m2!2m1!1sDeepak+Hospital+Shanti+Chowk+Bansbari+Hat+Kishanganj!3m6!1s0x39e5730066b06057:0xfc599f1c36937ecc!8m2!3d26.2888896!4d87.8096216!15sCjREZWVwYWsgSG9zcGl0YWwgU2hhbnRpIENob3drIEJhbnNiYXJpIEhhdCBLaXNoYW5nYW5qWjYiNGRlZXBhayBob3NwaXRhbCBzaGFudGkgY2hvd2sgYmFuc2JhcmkgaGF0IGtpc2hhbmdhbmqSAQhob3NwaXRhbJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQycFZORmRJYUhWaFYwNVJZbFJrVUdKVmREUlpNRkoxV0RJNVVsUnNSUkFCqgGYAQoJL20vMDJkbDF5EAEqLSIpZGVlcGFrIGhvc3BpdGFsIHNoYW50aSBjaG93ayBiYW5zYmFyaSBoYXQoADIgEAEiHLGz_e_cI0H9G1nQh5G6dFVQIR1eIsd0pJLeIjgyOBACIjRkZWVwYWsgaG9zcGl0YWwgc2hhbnRpIGNob3drIGJhbnNiYXJpIGhhdCBraXNoYW5nYW5q4AEA-gEECAAQEQ!16s%2Fg%2F11ww6b81zb?hl=en-US&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div style="margin-top:8px"><a href="https://www.google.com/maps/place/Dr+Deepak+Kumar+sinha+hospital+bahadurganj/" target="_blank" rel="noopener">Open in Google Maps</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2005–2025 Deepak Hospital • Bahadurganj, Kishanganj</footer>
+  </div>
+
+<script>
+  function setLang(lang){ document.querySelectorAll('[data-en]').forEach(el=>{ const v=el.getAttribute('data-'+lang); if(v!==null) el.innerHTML=v; }); localStorage.setItem('dh-lang', lang); document.documentElement.lang=(lang==='hi'?'hi':'en'); }
+  (function(){ setLang(localStorage.getItem('dh-lang')||'hi'); })();
 </script>
 </body>
 </html>
