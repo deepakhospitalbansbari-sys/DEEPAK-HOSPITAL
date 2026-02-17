@@ -3,13 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>Deepak Hospital | Trusted Care & 24x7 Emergency</title>
-
 <meta name="description" content="Deepak Hospital shanti chowk bansbari hat, Bahadurganj, Kishanganj – 24x7 Emergency, ICU/NICU, Experienced Doctors, Trusted Care since 2005">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root{
 --green:#0d7b57;
@@ -19,112 +16,141 @@
 --line:#e5e7eb;
 --ink:#0f172a;
 --soft:#f9fffb;
---maxw:1180px;
+--maxw:1200px;
+--shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html,body{
-margin:0;padding:0;
 font-family:Inter,"Noto Sans Devanagari",system-ui;
 background:var(--mint);
-color:var(--ink)
+color:var(--ink);
+line-height:1.6;
 }
 .wrap{max-width:var(--maxw);margin:auto;padding:20px}
-a{text-decoration:none;color:var(--green)}
-h1,h2,h3{margin:8px 0}
-.small{font-size:14px;color:#475569}
-.badge{display:inline-block;padding:6px 12px;border-radius:999px;background:#d1fae5;color:#065f46;font-size:13px;margin:4px}
-.card{background:var(--card);border-radius:14px;padding:20px;margin-top:20px}
-.grid{display:grid;gap:18px}
+a{text-decoration:none;color:var(--green);transition:color 0.3s}
+h1,h2,h3{margin:16px 0 8px}
+h1{font-size:2.5rem;font-weight:700}
+h2{font-size:2rem;font-weight:600}
+h3{font-size:1.5rem;font-weight:600}
+.small{font-size:14px;color:#64748b}
+.badge{display:inline-block;padding:8px 16px;border-radius:20px;background:#d1fae5;color:#065f46;font-size:13px;font-weight:500;margin:4px 4px 0 0}
+.card{background:var(--card);border-radius:16px;padding:24px;margin-top:24px;box-shadow:var(--shadow);transition:transform 0.3s}
+.card:hover{transform:translateY(-2px)}
+.grid{display:grid;gap:20px}
 .grid-2{grid-template-columns:1fr 1fr}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr}}
 .btn{
 background:var(--green);
 color:#fff;
-padding:12px 18px;
-border-radius:999px;
+padding:14px 24px;
+border-radius:50px;
 border:none;
-font-weight:700;
-cursor:pointer
+font-weight:600;
+cursor:pointer;
+transition:background 0.3s,transform 0.2s;
+display:inline-flex;
+align-items:center;
+gap:8px;
 }
+.btn:hover{background:var(--green-dark);transform:scale(1.05)}
 .btn-soft{
 background:#ecfdf5;
 color:var(--green);
-border:1px solid #bbf7d0
+border:1px solid #bbf7d0;
+transition:background 0.3s;
 }
+.btn-soft:hover{background:#d1fae5}
 header{
 background:linear-gradient(135deg,#2e8b57,#3cb371);
 color:#fff;
-padding:40px 20px;
-border-radius:18px
+padding:60px 20px;
+border-radius:20px;
+position:relative;
+overflow:hidden;
 }
+header::before{
+content:'';
+background:url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+position:absolute;
+top:0;left:0;width:100%;height:100%;
+opacity:0.1;
+}
+header > *{position:relative;z-index:1}
 nav{
-display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px
+display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px
 }
 nav a,nav button{
-padding:8px 14px;border-radius:999px;border:none;font-weight:600;cursor:pointer
+padding:10px 16px;border-radius:50px;border:none;font-weight:500;cursor:pointer;transition:background 0.3s
 }
 nav a{background:#ffffff;color:var(--green)}
+nav a:hover{background:#f0f0f0}
 nav .primary{background:var(--green-dark);color:#fff}
+nav .primary:hover{background:#0a4a35}
 .hero-stats{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:12px;margin-top:20px
+display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:16px;margin-top:30px
 }
 .stat{
-background:rgba(255,255,255,.15);
-padding:14px;border-radius:12px;text-align:center
+background:rgba(255,255,255,.2);
+padding:20px;border-radius:12px;text-align:center;
+backdrop-filter:blur(10px);
 }
-.section-title{font-size:13px;color:#0ea5e9;text-transform:uppercase;letter-spacing:.06em}
+.section-title{font-size:12px;color:#0ea5e9;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
 .icon{
-width:42px;height:42px;border-radius:50%;
+width:50px;height:50px;border-radius:50%;
 background:#ecfdf5;color:var(--green);
-display:grid;place-items:center;font-weight:800
+display:grid;place-items:center;font-size:24px;
 }
-.map{position:relative;padding-bottom:56%;height:0;border-radius:12px;overflow:hidden}
+.service-item{text-align:center}
+.service-item .icon{margin-bottom:12px}
+.doctor-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc;margin-bottom:16px}
+.doctor-item img{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:12px}
+.map{position:relative;padding-bottom:56%;height:0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 footer{
-margin-top:30px;
+margin-top:40px;
 background:var(--green-dark);
 color:#d1fae5;
 text-align:center;
-padding:18px;
-border-radius:14px
+padding:24px;
+border-radius:16px;
 }
+.review-item{background:#f8fafc;padding:16px;border-radius:12px;text-align:center;font-style:italic}
+.review-item::before{content:'“';font-size:2rem;color:var(--green);display:block;margin-bottom:8px}
+.review-item::after{content:'”';font-size:2rem;color:var(--green);display:block;margin-top:8px}
+input,select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid var(--line);
+border-radius:8px;
+font-family:inherit;
+}
+input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 2px rgba(13,123,87,0.2)}
 </style>
 </head>
-
 <body>
 <div class="wrap">
-
 <!-- ================= HERO ================= -->
 <header>
-<h1 data-hi="दीपक हॉस्पिटल – भरोसे का नाम"
-data-en="Deepak Hospital – Care You Can Trust">
-दीपक हॉस्पिटल – भरोसे का नाम
-</h1>
-
-<p class="small" data-hi="2005 से सेवा • 24×7 इमरजेंसी • जीवन के लिए समर्पित"
-data-en="Serving since 2005 • 24×7 Emergency • Dedicated to Life">
-Serving since 2005 • 24×7 Emergency • Dedicated to Life
-</p>
-
+<h1 data-hi="दीपक हॉस्पिटल – भरोसे का नाम" data-en="Deepak Hospital – Care You Can Trust">दीपक हॉस्पिटल – भरोसे का नाम</h1>
+<p class="small" data-hi="2005 से सेवा • 24×7 इमरजेंसी • जीवन के लिए समर्पित" data-en="Serving since 2005 • 24×7 Emergency • Dedicated to Life">Serving since 2005 • 24×7 Emergency • Dedicated to Life</p>
 <div>
-<span class="badge">24×7 Emergency</span>
-<span class="badge">ICU / NICU</span>
-<span class="badge">Modern OT</span>
-<span class="badge">Experienced Doctors</span>
+<span class="badge"><i class="fas fa-clock"></i> 24×7 Emergency</span>
+<span class="badge"><i class="fas fa-heartbeat"></i> ICU / NICU</span>
+<span class="badge"><i class="fas fa-user-md"></i> Modern OT</span>
+<span class="badge"><i class="fas fa-stethoscope"></i> Experienced Doctors</span>
 </div>
-
 <nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#doctors">Doctors</a>
-<a href="#appointment">Appointment</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
-<button class="primary" onclick="scrollToSection('appointment')">Book Appointment</button>
+<a href="#about"><i class="fas fa-info-circle"></i> About</a>
+<a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
+<a href="#doctors"><i class="fas fa-user-md"></i> Doctors</a>
+<a href="#appointment"><i class="fas fa-calendar-check"></i> Appointment</a>
+<a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
+<a href="#contact"><i class="fas fa-phone"></i> Contact</a>
+<button class="primary" onclick="scrollToSection('appointment')"><i class="fas fa-calendar-plus"></i> Book Appointment</button>
 </nav>
-
 <div class="hero-stats">
 <div class="stat"><strong>20+</strong><br>Years Experience</div>
 <div class="stat"><strong>50,000+</strong><br>Patients Treated</div>
@@ -135,109 +161,156 @@ Serving since 2005 • 24×7 Emergency • Dedicated to Life
 
 <!-- ================= ABOUT ================= -->
 <section id="about" class="card">
-<div class="section-title">About Hospital</div>
+<div class="section-title"><i class="fas fa-hospital"></i> About Hospital</div>
 <h2>Healing with Care, Hope & Humanity</h2>
+<div class="grid grid-2">
+<div>
 <p class="small">
-Deepak Hospital shanti chowk , bansbari hat, Bahadurganj is a trusted multispeciality hospital providing
-ethical, affordable and compassionate healthcare.  
-Our calm environment, experienced doctors and dedicated nursing staff
-ensure that every patient feels safe, hopeful and cared for.
+Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for.
 </p>
+</div>
+<div>
+<img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hospital Interior" style="width:100%;border-radius:12px;">
+</div>
+</div>
 </section>
 
 <!-- ================= SERVICES ================= -->
 <section id="services" class="card">
-<div class="section-title">Our Services</div>
+<div class="section-title"><i class="fas fa-cogs"></i> Our Services</div>
 <div class="grid grid-3">
-<div><div class="icon">🩺</div><strong>General Medicine</strong><p class="small">Daily OPD & chronic care</p></div>
-<div><div class="icon">🤱</div><strong>Delivery & Gynecology</strong><p class="small">Normal & C-Section</p></div>
-<div><div class="icon">🏥</div><strong>ICU / NICU</strong><p class="small">Critical patient care</p></div>
-<div><div class="icon">🦷</div><strong>Dental Care</strong><p class="small">Pain-free treatment</p></div>
-<div><div class="icon">🔬</div><strong>Pathology</strong><p class="small">Accurate lab testing</p></div>
-<div><div class="icon">💊</div><strong>Pharmacy</strong><p class="small">24×7 medicine support</p></div>
+<div class="service-item">
+<div class="icon"><i class="fas fa-stethoscope"></i></div>
+<strong>General Medicine</strong>
+<p class="small">Daily OPD & chronic care</p>
+</div>
+<div class="service-item">
+<div class="icon"><i class="fas fa-baby"></i></div>
+<strong>Delivery & Gynecology</strong>
+<p class="small">Normal & C-Section</p>
+</div>
+<div class="service-item">
+<div class="icon"><i class="fas fa-heartbeat"></i></div>
+<strong>ICU / NICU</strong>
+<p class="small">Critical patient care</p>
+</div>
+<div class="service-item">
+<div class="icon"><i class="fas fa-tooth"></i></div>
+<strong>Dental Care</strong>
+<p class="small">Pain-free treatment</p>
+</div>
+<div class="service-item">
+<div class="icon"><i class="fas fa-flask"></i></div>
+<strong>Pathology</strong>
+<p class="small">Accurate lab testing</p>
+</div>
+<div class="service-item">
+<div class="icon"><i class="fas fa-pills"></i></div>
+<strong>Pharmacy</strong>
+<p class="small">24×7 medicine support</p>
+</div>
 </div>
 </section>
 
 <!-- ================= DOCTORS ================= -->
 <section id="doctors" class="card">
-<div class="section-title">Our Doctors</div>
+<div class="section-title"><i class="fas fa-user-md"></i> Our Doctors</div>
 <div class="grid grid-3">
-<div><strong> Deepak Kumar Sinha</strong><p class="small">Director</p></div>
-<div><strong>Dr. Roushan Ali</strong><p class="small">MBBS, FCCM</p></div>
-<div><strong>Dr. Shabab Ahmad</strong><p class="small">Diabetes Specialist</p></div>
-<div><strong>Dr. Naziya Praween</strong><p class="small">Gynecology</p></div>
-<div><strong>Dr. B. Soren</strong><p class="small">General Surgeon</p></div>
-<div><strong>Dr. Atif Akram</strong><p class="small">Dental Surgeon</p></div>
-</div><strong> Dr. S.K Sinha</strong><p class="small">General physician</p></div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Deepak Kumar Sinha">
+<strong>Deepak Kumar Sinha</strong>
+<p class="small">Director</p>
+</div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Roushan Ali">
+<strong>Dr. Roushan Ali</strong>
+<p class="small">MBBS, FCCM</p>
+</div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1594824804732-ca8db723f8fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Shabab Ahmad">
+<strong>Dr. Shabab Ahmad</strong>
+<p class="small">Diabetes Specialist</p>
+</div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Naziya Praween">
+<strong>Dr. Naziya Praween</strong>
+<p class="small">Gynecology</p>
+</div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. B. Soren">
+<strong>Dr. B. Soren</strong>
+<p class="small">General Surgeon</p>
+</div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Atif Akram">
+<strong>Dr. Atif Akram</strong>
+<p class="small">Dental Surgeon</p>
+</div>
+<div class="doctor-item">
+<img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. S.K Sinha">
+<strong>Dr. S.K Sinha</strong>
+<p class="small">General Physician</p>
+</div>
+</div>
 </section>
-</div><
 
 <!-- ================= APPOINTMENT ================= -->
 <section id="appointment" class="card">
-<div class="section-title">Appointment</div>
+<div class="section-title"><i class="fas fa-calendar-check"></i> Appointment</div>
 <h2>Book Appointment – Multiple Easy Options</h2>
-
 <div class="grid grid-3">
-<div>
-<h3>📞 Call</h3>
+<div class="service-item">
+<h3><i class="fas fa-phone"></i> Call</h3>
 <p class="small"><a href="tel:7979812332">7979812332</a></p>
 </div>
-
-<div>
-<h3>💬 WhatsApp</h3>
-<button class="btn" onclick="wa()">Chat on WhatsApp</button>
+<div class="service-item">
+<h3><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+<button class="btn" onclick="wa()"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</button>
 </div>
-
-<div>
-<h3>🏥 Walk-In</h3>
+<div class="service-item">
+<h3><i class="fas fa-door-open"></i> Walk-In</h3>
 <p class="small">OPD: 11:00–13:00 & 15:00–18:00</p>
 </div>
 </div>
-
-<hr style="margin:20px 0;border:1px solid var(--line)">
-
-<h3>📝 Online Request</h3>
-<input id="name" placeholder="Patient Name" style="width:100%;padding:10px;margin:6px 0">
-<input id="phone" placeholder="Phone Number" style="width:100%;padding:10px;margin:6px 0">
-<select id="dept" style="width:100%;padding:10px;margin:6px 0">
+<hr style="margin:24px 0;border:1px solid var(--line)">
+<h3><i class="fas fa-edit"></i> Online Request</h3>
+<input id="name" placeholder="Patient Name" required>
+<input id="phone" placeholder="Phone Number" type="tel" required>
+<select id="dept" required>
+<option value="">Select Department</option>
 <option>General</option>
 <option>Delivery</option>
 <option>Surgery</option>
 <option>Dental</option>
 <option>Other</option>
 </select>
-<button class="btn" onclick="send()">Submit via WhatsApp</button>
+<button class="btn" onclick="send()"><i class="fab fa-whatsapp"></i> Submit via WhatsApp</button>
 </section>
 
 <!-- ================= REVIEWS ================= -->
 <section id="reviews" class="card">
-<div class="section-title">Patient Reviews</div>
+<div class="section-title"><i class="fas fa-star"></i> Patient Reviews</div>
 <div class="grid grid-3">
-<p>“समय पर इलाज से जान बची।”</p>
-<p>“डॉक्टर और स्टाफ बहुत सहयोगी।”</p>
-<p>“हॉस्पिटल में सुकून का माहौल।”</p>
-<p>“डिलीवरी में पूरा सपोर्ट मिला।”</p>
-<p>“24×7 इमरजेंसी सबसे बड़ी ताकत।”</p>
-<p>“पूरे परिवार का भरोसा।”</p>
+<div class="review-item">समय पर इलाज से जान बची।</div>
+<div class="review-item">डॉक्टर और स्टाफ बहुत सहयोगी।</div>
+<div class="review-item">हॉस्पिटल में सुकून का माहौल।</div>
+<div class="review-item">डिलीवरी में पूरा सपोर्ट मिला।</div>
+<div class="review-item">24×7 इमरजेंसी सबसे बड़ी ताकत।</div>
+<div class="review-item">पूरे परिवार का भरोसा।</div>
 </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="card">
-<div class="section-title">Contact & Location</div>
+<div class="section-title"><i class="fas fa-map-marker-alt"></i> Contact & Location</div>
 <div class="grid grid-2">
 <div>
-<p>
-<strong>Address:</strong><br>
-Shanti Chowk, Baansbaari Haat,<br>
-Bahadurganj, Kishanganj, Bihar
-</p>
-<p><strong>Phone:</strong> <a href="tel:7979812332">7979812332</a></p>
-<p><strong>WhatsApp:</strong> 7783022191</p>
-<p><strong>Email:</strong> deepakhospitalbansbari@gmail.com</p>
-<p class="badge">Emergency 24×7</p>
+<p><strong>Address:</strong><br>Shanti Chowk, Baansbaari Haat,<br>Bahadurganj, Kishanganj, Bihar</p>
+<p><strong>Phone:</strong> <a href="tel:7979812332"><i class="fas fa-phone"></i> 7979812332</a></p>
+<p><strong>WhatsApp:</strong> <a href="https://wa.me/917783022191"><i class="fab fa-whatsapp"></i> 7783022191</a></p>
+<p><strong>Email:</strong> <a href="mailto:deepakhospitalbansbari@gmail.com"><i class="fas fa-envelope"></i> deepakhospitalbansbari@gmail.com</a></p>
+<p class="badge"><i class="fas fa-clock"></i> Emergency 24×7</p>
 </div>
-
 <div class="map">
 <iframe src="https://www.google.com/maps?q=Deepak+Hospital+Bahadurganj&output=embed"></iframe>
 </div>
@@ -245,10 +318,9 @@ Bahadurganj, Kishanganj, Bihar
 </section>
 
 <footer>
-© 2005–2025 Deepak Hospital  
-<br>Care • Hope • Trust
+© 2005–2025 Deepak Hospital<br>
+<i class="fas fa-heart"></i> Care • Hope • Trust
 </footer>
-
 </div>
 
 <script>
@@ -259,11 +331,10 @@ function wa(){
 window.open("https://wa.me/917783022191","_blank")
 }
 function send(){
-let n=name.value,p=phone.value,d=dept.value;
-if(!p){alert("Phone required");return}
+let n=document.getElementById('name').value,p=document.getElementById('phone').value,d=document.getElementById('dept').value;
+if(!p){alert("Phone number is required");return}
 window.open(`https://wa.me/917783022191?text=Appointment Request%0AName:${n}%0APhone:${p}%0ADepartment:${d}`,'_blank')
 }
 </script>
-
 </body>
 </html>
