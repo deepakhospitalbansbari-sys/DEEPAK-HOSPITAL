@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Deepak Hospital | Trusted Care & 24x7 Emergency</title>
 <meta name="description" content="Deepak Hospital shanti chowk bansbari hat, Bahadurganj, Kishanganj – 24x7 Emergency, ICU/NICU, Experienced Doctors, Trusted Care since 2005">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root{
@@ -21,7 +21,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{
-font-family:Inter,"Noto Sans Devanagari",system-ui;
+font-family:Inter,"Noto Sans Devanagari","Noto Sans Arabic",system-ui;
 background:var(--mint);
 color:var(--ink);
 line-height:1.6;
@@ -39,7 +39,8 @@ h3{font-size:1.5rem;font-weight:600}
 .grid{display:grid;gap:20px}
 .grid-2{grid-template-columns:1fr 1fr}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
 .btn{
 background:var(--green);
 color:#fff;
@@ -102,10 +103,9 @@ width:50px;height:50px;border-radius:50%;
 background:#ecfdf5;color:var(--green);
 display:grid;place-items:center;font-size:24px;
 }
-.service-item{text-align:center}
-.service-item .icon{margin-bottom:12px}
+.service-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc}
+.service-item img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:12px}
 .doctor-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc;margin-bottom:16px}
-.doctor-item img{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:12px}
 .map{position:relative;padding-bottom:56%;height:0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 footer{
@@ -119,7 +119,7 @@ border-radius:16px;
 .review-item{background:#f8fafc;padding:16px;border-radius:12px;text-align:center;font-style:italic}
 .review-item::before{content:'“';font-size:2rem;color:var(--green);display:block;margin-bottom:8px}
 .review-item::after{content:'”';font-size:2rem;color:var(--green);display:block;margin-top:8px}
-input,select{
+input,select,textarea{
 width:100%;
 padding:12px;
 margin:8px 0;
@@ -127,46 +127,81 @@ border:1px solid var(--line);
 border-radius:8px;
 font-family:inherit;
 }
-input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 2px rgba(13,123,87,0.2)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 2px rgba(13,123,87,0.2)}
+.lang-toggle{
+position:fixed;top:20px;right:20px;z-index:1000;
+background:#fff;padding:8px 12px;border-radius:8px;box-shadow:var(--shadow);
+}
+.lang-toggle select{font-size:14px;border:none;outline:none}
+.facility-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc}
+.facility-item img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.page-section{display:none}
+.page-section.active{display:block}
+.page-nav{display:flex;justify-content:center;margin:20px 0}
+.page-nav button{margin:0 10px;padding:10px 20px;border-radius:8px;border:1px solid var(--green);background:#fff;color:var(--green);cursor:pointer}
+.page-nav button.active{background:var(--green);color:#fff}
 </style>
 </head>
 <body>
+<div class="lang-toggle">
+<label for="lang">Language:</label>
+<select id="lang" onchange="changeLang()">
+<option value="hi">हिंदी</option>
+<option value="en">English</option>
+<option value="ur">اردو</option>
+</select>
+</div>
 <div class="wrap">
-<!-- ================= HERO ================= -->
+<!-- Page Navigation -->
+<div class="page-nav">
+<button class="active" onclick="showPage('home')">Home</button>
+<button onclick="showPage('about')">About</button>
+<button onclick="showPage('services')">Services</button>
+<button onclick="showPage('doctors')">Doctors</button>
+<button onclick="showPage('facilities')">Facilities</button>
+<button onclick="showPage('appointment')">Appointment</button>
+<button onclick="showPage('reviews')">Reviews</button>
+<button onclick="showPage('contact')">Contact</button>
+</div>
+
+<!-- ================= HOME PAGE ================= -->
+<div id="home" class="page-section active">
 <header>
-<h1 data-hi="दीपक हॉस्पिटल – भरोसे का नाम" data-en="Deepak Hospital – Care You Can Trust">दीपक हॉस्पिटल – भरोसे का नाम</h1>
-<p class="small" data-hi="2005 से सेवा • 24×7 इमरजेंसी • जीवन के लिए समर्पित" data-en="Serving since 2005 • 24×7 Emergency • Dedicated to Life">Serving since 2005 • 24×7 Emergency • Dedicated to Life</p>
+<h1 id="hero-title" data-hi="दीपक हॉस्पिटल – भरोसे का नाम" data-en="Deepak Hospital – Care You Can Trust" data-ur="دیپک ہسپتال – اعتماد کا نام">दीपक हॉस्पिटल – भरोसे का नाम</h1>
+<p class="small" id="hero-subtitle" data-hi="2005 से सेवा • 24×7 इमरजेंसी • जीवन के लिए समर्पित" data-en="Serving since 2005 • 24×7 Emergency • Dedicated to Life" data-ur="2005 سے خدمت • 24×7 ایمرجنسی • زندگی کے لیے وقف">Serving since 2005 • 24×7 Emergency • Dedicated to Life</p>
 <div>
-<span class="badge"><i class="fas fa-clock"></i> 24×7 Emergency</span>
-<span class="badge"><i class="fas fa-heartbeat"></i> ICU / NICU</span>
-<span class="badge"><i class="fas fa-user-md"></i> Modern OT</span>
-<span class="badge"><i class="fas fa-stethoscope"></i> Experienced Doctors</span>
+<span class="badge"><i class="fas fa-clock"></i> <span id="badge1" data-hi="24×7 इमरजेंसी" data-en="24×7 Emergency" data-ur="24×7 ایمرجنسی">24×7 Emergency</span></span>
+<span class="badge"><i class="fas fa-heartbeat"></i> <span id="badge2" data-hi="ICU / NICU" data-en="ICU / NICU" data-ur="آئی سی یو / این آئی سی یو">ICU / NICU</span></span>
+<span class="badge"><i class="fas fa-user-md"></i> <span id="badge3" data-hi="आधुनिक OT" data-en="Modern OT" data-ur="جدید OT">Modern OT</span></span>
+<span class="badge"><i class="fas fa-stethoscope"></i> <span id="badge4" data-hi="अनुभवी डॉक्टर" data-en="Experienced Doctors" data-ur="تجربہ کار ڈاکٹرز">Experienced Doctors</span></span>
 </div>
 <nav>
-<a href="#about"><i class="fas fa-info-circle"></i> About</a>
-<a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
-<a href="#doctors"><i class="fas fa-user-md"></i> Doctors</a>
-<a href="#appointment"><i class="fas fa-calendar-check"></i> Appointment</a>
-<a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
-<a href="#contact"><i class="fas fa-phone"></i> Contact</a>
-<button class="primary" onclick="scrollToSection('appointment')"><i class="fas fa-calendar-plus"></i> Book Appointment</button>
+<a href="#about"><i class="fas fa-info-circle"></i> <span id="nav-about" data-hi="हमारे बारे में" data-en="About" data-ur="ہمارے بارے میں">About</span></a>
+<a href="#services"><i class="fas fa-concierge-bell"></i> <span id="nav-services" data-hi="सेवाएं" data-en="Services" data-ur="خدمات">Services</span></a>
+<a href="#doctors"><i class="fas fa-user-md"></i> <span id="nav-doctors" data-hi="डॉक्टर" data-en="Doctors" data-ur="ڈاکٹرز">Doctors</span></a>
+<a href="#appointment"><i class="fas fa-calendar-check"></i> <span id="nav-appointment" data-hi="अपॉइंटमेंट" data-en="Appointment" data-ur="ملاقات">Appointment</span></a>
+<a href="#reviews"><i class="fas fa-star"></i> <span id="nav-reviews" data-hi="समीक्षाएं" data-en="Reviews" data-ur="جائزے">Reviews</span></a>
+<a href="#contact"><i class="fas fa-phone"></i> <span id="nav-contact" data-hi="संपर्क" data-en="Contact" data-ur="رابطہ">Contact</span></a>
+<button class="primary" onclick="scrollToSection('appointment')"><i class="fas fa-calendar-plus"></i> <span id="book-btn" data-hi="अपॉइंटमेंट बुक करें" data-en="Book Appointment" data-ur="ملاقات بک کریں">Book Appointment</span></button>
 </nav>
 <div class="hero-stats">
-<div class="stat"><strong>20+</strong><br>Years Experience</div>
-<div class="stat"><strong>50,000+</strong><br>Patients Treated</div>
-<div class="stat"><strong>24×7</strong><br>Emergency Care</div>
-<div class="stat"><strong>4.9★</strong><br>Patient Rating</div>
+<div class="stat"><strong>20+</strong><br><span id="stat1" data-hi="साल का अनुभव" data-en="Years Experience" data-ur="سالوں کا تجربہ">Years Experience</span></div>
+<div class="stat"><strong>50,000+</strong><br><span id="stat2" data-hi="मरीजों का इलाज" data-en="Patients Treated" data-ur="مریضوں کا علاج">Patients Treated</span></div>
+<div class="stat"><strong>24×7</strong><br><span id="stat3" data-hi="इमरजेंसी देखभाल" data-en="Emergency Care" data-ur="ایمرجنسی کیئر">Emergency Care</span></div>
+<div class="stat"><strong>4.9★</strong><br><span id="stat4" data-hi="मरीज रेटिंग" data-en="Patient Rating" data-ur="مریض کی درجہ بندی">Patient Rating</span></div>
 </div>
 </header>
+</div>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="card">
-<div class="section-title"><i class="fas fa-hospital"></i> About Hospital</div>
-<h2>Healing with Care, Hope & Humanity</h2>
+<!-- ================= ABOUT PAGE ================= -->
+<div id="about" class="page-section">
+<section class="card">
+<div class="section-title"><i class="fas fa-hospital"></i> <span id="about-title" data-hi="हॉस्पिटल के बारे में" data-en="About Hospital" data-ur="ہسپتال کے بارے میں">About Hospital</span></div>
+<h2 id="about-h2" data-hi="देखभाल, आशा और मानवता के साथ उपचार" data-en="Healing with Care, Hope & Humanity" data-ur="دیکھ بھال، امید اور انسانیت کے ساتھ علاج">Healing with Care, Hope & Humanity</h2>
 <div class="grid grid-2">
 <div>
-<p class="small">
-Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for.
+<p class="small" id="about-text" data-hi="दीपक हॉस्पिटल, शांति चौक, बंसबरी हाट, बहादुरगंज, किशनगंज में स्थित एक विश्वसनीय बहु-विशेषज्ञता वाला अस्पताल है जो नैतिक, किफायती और दयालु स्वास्थ्य सेवा प्रदान करता है। हमारा शांत वातावरण, अनुभवी डॉक्टर और समर्पित नर्सिंग स्टाफ सुनिश्चित करता है कि हर मरीज सुरक्षित, आशावान और देखभाल महसूस करे। हम 2005 से सेवा दे रहे हैं और हजारों मरीजों की जिंदगी बचाई है।" data-en="Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for. Serving since 2005, we have saved thousands of lives." data-ur="دیپک ہسپتال، شanti چوک، بانس باری ہاٹ، بہادر گنج، کشن گنج میں واقع ایک قابل اعتماد ملٹی سپیشلٹی ہسपتال ہے جو اخلاقی، سستی اور رحم دل ہیلتھ کیئر فراہم کرتا ہے۔ ہمارا پرسکون ماحول، تجربہ کار ڈاکٹرز اور وقف شدہ نرسنگ اسٹاف یقینی بناتا ہے کہ ہر مریض محفوظ، امید افزا اور دیکھ بھال محسوس کرے۔ 2005 سے خدمت کر رہے ہیں، ہم نے ہزاروں زندگیاں بچائی ہیں۔">
+Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for. Serving since 2005, we have saved thousands of lives.
 </p>
 </div>
 <div>
@@ -174,167 +209,24 @@ Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj,
 </div>
 </div>
 </section>
+</div>
 
-<!-- ================= SERVICES ================= -->
-<section id="services" class="card">
-<div class="section-title"><i class="fas fa-cogs"></i> Our Services</div>
+<!-- ================= SERVICES PAGE ================= -->
+<div id="services" class="page-section">
+<section class="card">
+<div class="section-title"><i class="fas fa-cogs"></i> <span id="services-title" data-hi="हमारी सेवाएं" data-en="Our Services" data-ur="ہماری خدمات">Our Services</span></div>
 <div class="grid grid-3">
 <div class="service-item">
+<img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="General Medicine">
 <div class="icon"><i class="fas fa-stethoscope"></i></div>
-<strong>General Medicine</strong>
-<p class="small">Daily OPD & chronic care</p>
+<strong id="service1-title" data-hi="सामान्य चिकित्सा" data-en="General Medicine" data-ur="عام طب">General Medicine</strong>
+<p class="small" id="service1-desc" data-hi="दैनिक OPD और पुरानी देखभाल" data-en="Daily OPD & chronic care" data-ur="روزانہ OPD اور دائمی کیئر">Daily OPD & chronic care</p>
 </div>
 <div class="service-item">
+<img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Delivery & Gynecology">
 <div class="icon"><i class="fas fa-baby"></i></div>
-<strong>Delivery & Gynecology</strong>
-<p class="small">Normal & C-Section</p>
+<strong id="service2-title" data-hi="डिलीवरी और स्त्री रोग" data-en="Delivery & Gynecology" data-ur="ڈیلیوری اور گائنیکولوجی">Delivery & Gynecology</strong>
+<p class="small" id="service2-desc" data-hi="सामान्य और सी-सेक्शन" data-en="Normal & C-Section" data-ur="عام اور سی سیکشن">Normal & C-Section</p>
 </div>
 <div class="service-item">
-<div class="icon"><i class="fas fa-heartbeat"></i></div>
-<strong>ICU / NICU</strong>
-<p class="small">Critical patient care</p>
-</div>
-<div class="service-item">
-<div class="icon"><i class="fas fa-tooth"></i></div>
-<strong>Dental Care</strong>
-<p class="small">Pain-free treatment</p>
-</div>
-<div class="service-item">
-<div class="icon"><i class="fas fa-flask"></i></div>
-<strong>Pathology</strong>
-<p class="small">Accurate lab testing</p>
-</div>
-<div class="service-item">
-<div class="icon"><i class="fas fa-pills"></i></div>
-<strong>Pharmacy</strong>
-<p class="small">24×7 medicine support</p>
-</div>
-</div>
-</section>
-
-<!-- ================= DOCTORS ================= -->
-<section id="doctors" class="card">
-<div class="section-title"><i class="fas fa-user-md"></i> Our Doctors</div>
-<div class="grid grid-3">
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Deepak Kumar Sinha">
-<strong>Deepak Kumar Sinha</strong>
-<p class="small">Director</p>
-</div>
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Roushan Ali">
-<strong>Dr. Roushan Ali</strong>
-<p class="small">MBBS, FCCM</p>
-</div>
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1594824804732-ca8db723f8fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Shabab Ahmad">
-<strong>Dr. Shabab Ahmad</strong>
-<p class="small">Diabetes Specialist</p>
-</div>
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Naziya Praween">
-<strong>Dr. Naziya Praween</strong>
-<p class="small">Gynecology</p>
-</div>
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. B. Soren">
-<strong>Dr. B. Soren</strong>
-<p class="small">General Surgeon</p>
-</div>
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Atif Akram">
-<strong>Dr. Atif Akram</strong>
-<p class="small">Dental Surgeon</p>
-</div>
-<div class="doctor-item">
-<img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. S.K Sinha">
-<strong>Dr. S.K Sinha</strong>
-<p class="small">General Physician</p>
-</div>
-</div>
-</section>
-
-<!-- ================= APPOINTMENT ================= -->
-<section id="appointment" class="card">
-<div class="section-title"><i class="fas fa-calendar-check"></i> Appointment</div>
-<h2>Book Appointment – Multiple Easy Options</h2>
-<div class="grid grid-3">
-<div class="service-item">
-<h3><i class="fas fa-phone"></i> Call</h3>
-<p class="small"><a href="tel:7979812332">7979812332</a></p>
-</div>
-<div class="service-item">
-<h3><i class="fab fa-whatsapp"></i> WhatsApp</h3>
-<button class="btn" onclick="wa()"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</button>
-</div>
-<div class="service-item">
-<h3><i class="fas fa-door-open"></i> Walk-In</h3>
-<p class="small">OPD: 11:00–13:00 & 15:00–18:00</p>
-</div>
-</div>
-<hr style="margin:24px 0;border:1px solid var(--line)">
-<h3><i class="fas fa-edit"></i> Online Request</h3>
-<input id="name" placeholder="Patient Name" required>
-<input id="phone" placeholder="Phone Number" type="tel" required>
-<select id="dept" required>
-<option value="">Select Department</option>
-<option>General</option>
-<option>Delivery</option>
-<option>Surgery</option>
-<option>Dental</option>
-<option>Other</option>
-</select>
-<button class="btn" onclick="send()"><i class="fab fa-whatsapp"></i> Submit via WhatsApp</button>
-</section>
-
-<!-- ================= REVIEWS ================= -->
-<section id="reviews" class="card">
-<div class="section-title"><i class="fas fa-star"></i> Patient Reviews</div>
-<div class="grid grid-3">
-<div class="review-item">समय पर इलाज से जान बची।</div>
-<div class="review-item">डॉक्टर और स्टाफ बहुत सहयोगी।</div>
-<div class="review-item">हॉस्पिटल में सुकून का माहौल।</div>
-<div class="review-item">डिलीवरी में पूरा सपोर्ट मिला।</div>
-<div class="review-item">24×7 इमरजेंसी सबसे बड़ी ताकत।</div>
-<div class="review-item">पूरे परिवार का भरोसा।</div>
-</div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="card">
-<div class="section-title"><i class="fas fa-map-marker-alt"></i> Contact & Location</div>
-<div class="grid grid-2">
-<div>
-<p><strong>Address:</strong><br>Shanti Chowk, Baansbaari Haat,<br>Bahadurganj, Kishanganj, Bihar</p>
-<p><strong>Phone:</strong> <a href="tel:7979812332"><i class="fas fa-phone"></i> 7979812332</a></p>
-<p><strong>WhatsApp:</strong> <a href="https://wa.me/917783022191"><i class="fab fa-whatsapp"></i> 7783022191</a></p>
-<p><strong>Email:</strong> <a href="mailto:deepakhospitalbansbari@gmail.com"><i class="fas fa-envelope"></i> deepakhospitalbansbari@gmail.com</a></p>
-<p class="badge"><i class="fas fa-clock"></i> Emergency 24×7</p>
-</div>
-<div class="map">
-<iframe src="https://www.google.com/maps?q=Deepak+Hospital+Bahadurganj&output=embed"></iframe>
-</div>
-</div>
-</section>
-
-<footer>
-© 2005–2025 Deepak Hospital<br>
-<i class="fas fa-heart"></i> Care • Hope • Trust
-</footer>
-</div>
-
-<script>
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'})
-}
-function wa(){
-window.open("https://wa.me/917783022191","_blank")
-}
-function send(){
-let n=document.getElementById('name').value,p=document.getElementById('phone').value,d=document.getElementById('dept').value;
-if(!p){alert("Phone number is required");return}
-window.open(`https://wa.me/917783022191?text=Appointment Request%0AName:${n}%0APhone:${p}%0ADepartment:${d}`,'_blank')
-}
-</script>
-</body>
-</html>
+<img src
