@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="hi">
 <head>
@@ -40,7 +39,8 @@ h3{font-size:1.5rem;font-weight:600}
 .grid{display:grid;gap:20px}
 .grid-2{grid-template-columns:1fr 1fr}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
 .btn{
 background:var(--green);
 color:#fff;
@@ -103,8 +103,8 @@ width:50px;height:50px;border-radius:50%;
 background:#ecfdf5;color:var(--green);
 display:grid;place-items:center;font-size:24px;
 }
-.service-item{text-align:center}
-.service-item .icon{margin-bottom:12px}
+.service-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc}
+.service-item img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:12px}
 .doctor-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc;margin-bottom:16px}
 .map{position:relative;padding-bottom:56%;height:0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -119,7 +119,7 @@ border-radius:16px;
 .review-item{background:#f8fafc;padding:16px;border-radius:12px;text-align:center;font-style:italic}
 .review-item::before{content:'“';font-size:2rem;color:var(--green);display:block;margin-bottom:8px}
 .review-item::after{content:'”';font-size:2rem;color:var(--green);display:block;margin-top:8px}
-input,select{
+input,select,textarea{
 width:100%;
 padding:12px;
 margin:8px 0;
@@ -127,12 +127,19 @@ border:1px solid var(--line);
 border-radius:8px;
 font-family:inherit;
 }
-input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 2px rgba(13,123,87,0.2)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 2px rgba(13,123,87,0.2)}
 .lang-toggle{
 position:fixed;top:20px;right:20px;z-index:1000;
 background:#fff;padding:8px 12px;border-radius:8px;box-shadow:var(--shadow);
 }
 .lang-toggle select{font-size:14px;border:none;outline:none}
+.facility-item{text-align:center;padding:20px;border-radius:12px;background:#f8fafc}
+.facility-item img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.page-section{display:none}
+.page-section.active{display:block}
+.page-nav{display:flex;justify-content:center;margin:20px 0}
+.page-nav button{margin:0 10px;padding:10px 20px;border-radius:8px;border:1px solid var(--green);background:#fff;color:var(--green);cursor:pointer}
+.page-nav button.active{background:var(--green);color:#fff}
 </style>
 </head>
 <body>
@@ -145,7 +152,20 @@ background:#fff;padding:8px 12px;border-radius:8px;box-shadow:var(--shadow);
 </select>
 </div>
 <div class="wrap">
-<!-- ================= HERO ================= -->
+<!-- Page Navigation -->
+<div class="page-nav">
+<button class="active" onclick="showPage('home')">Home</button>
+<button onclick="showPage('about')">About</button>
+<button onclick="showPage('services')">Services</button>
+<button onclick="showPage('doctors')">Doctors</button>
+<button onclick="showPage('facilities')">Facilities</button>
+<button onclick="showPage('appointment')">Appointment</button>
+<button onclick="showPage('reviews')">Reviews</button>
+<button onclick="showPage('contact')">Contact</button>
+</div>
+
+<!-- ================= HOME PAGE ================= -->
+<div id="home" class="page-section active">
 <header>
 <h1 id="hero-title" data-hi="दीपक हॉस्पिटल – भरोसे का नाम" data-en="Deepak Hospital – Care You Can Trust" data-ur="دیپک ہسپتال – اعتماد کا نام">दीपक हॉस्पिटल – भरोसे का नाम</h1>
 <p class="small" id="hero-subtitle" data-hi="2005 से सेवा • 24×7 इमरजेंसी • जीवन के लिए समर्पित" data-en="Serving since 2005 • 24×7 Emergency • Dedicated to Life" data-ur="2005 سے خدمت • 24×7 ایمرجنسی • زندگی کے لیے وقف">Serving since 2005 • 24×7 Emergency • Dedicated to Life</p>
@@ -171,15 +191,17 @@ background:#fff;padding:8px 12px;border-radius:8px;box-shadow:var(--shadow);
 <div class="stat"><strong>4.9★</strong><br><span id="stat4" data-hi="मरीज रेटिंग" data-en="Patient Rating" data-ur="مریض کی درجہ بندی">Patient Rating</span></div>
 </div>
 </header>
+</div>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="card">
+<!-- ================= ABOUT PAGE ================= -->
+<div id="about" class="page-section">
+<section class="card">
 <div class="section-title"><i class="fas fa-hospital"></i> <span id="about-title" data-hi="हॉस्पिटल के बारे में" data-en="About Hospital" data-ur="ہسپتال کے بارے میں">About Hospital</span></div>
 <h2 id="about-h2" data-hi="देखभाल, आशा और मानवता के साथ उपचार" data-en="Healing with Care, Hope & Humanity" data-ur="دیکھ بھال، امید اور انسانیت کے ساتھ علاج">Healing with Care, Hope & Humanity</h2>
 <div class="grid grid-2">
 <div>
-<p class="small" id="about-text" data-hi="दीपक हॉस्पिटल, शांति चौक, बंसबरी हाट, बहादुरगंज, किशनगंज में स्थित एक विश्वसनीय बहु-विशेषज्ञता वाला अस्पताल है जो नैतिक, किफायती और दयालु स्वास्थ्य सेवा प्रदान करता है। हमारा शांत वातावरण, अनुभवी डॉक्टर और समर्पित नर्सिंग स्टाफ सुनिश्चित करता है कि हर मरीज सुरक्षित, आशावान और देखभाल महसूस करे।" data-en="Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for." data-ur="دیپک ہسپتال، شanti چوک، بانس باری ہاٹ، بہادر گنج، کشن گنج میں واقع ایک قابل اعتماد ملٹی سپیشلٹی ہسپتال ہے جو اخلاقی، سستی اور رحم دل ہیلتھ کیئر فراہم کرتا ہے۔ ہمارا پرسکون ماحول، تجربہ کار ڈاکٹرز اور وقف شدہ نرسنگ اسٹاف یقینی بناتا ہے کہ ہر مریض محفوظ، امید افزا اور دیکھ بھال محسوس کرے۔">
-Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for.
+<p class="small" id="about-text" data-hi="दीपक हॉस्पिटल, शांति चौक, बंसबरी हाट, बहादुरगंज, किशनगंज में स्थित एक विश्वसनीय बहु-विशेषज्ञता वाला अस्पताल है जो नैतिक, किफायती और दयालु स्वास्थ्य सेवा प्रदान करता है। हमारा शांत वातावरण, अनुभवी डॉक्टर और समर्पित नर्सिंग स्टाफ सुनिश्चित करता है कि हर मरीज सुरक्षित, आशावान और देखभाल महसूस करे। हम 2005 से सेवा दे रहे हैं और हजारों मरीजों की जिंदगी बचाई है।" data-en="Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for. Serving since 2005, we have saved thousands of lives." data-ur="دیپک ہسپتال، شanti چوک، بانس باری ہاٹ، بہادر گنج، کشن گنج میں واقع ایک قابل اعتماد ملٹی سپیشلٹی ہسपتال ہے جو اخلاقی، سستی اور رحم دل ہیلتھ کیئر فراہم کرتا ہے۔ ہمارا پرسکون ماحول، تجربہ کار ڈاکٹرز اور وقف شدہ نرسنگ اسٹاف یقینی بناتا ہے کہ ہر مریض محفوظ، امید افزا اور دیکھ بھال محسوس کرے۔ 2005 سے خدمت کر رہے ہیں، ہم نے ہزاروں زندگیاں بچائی ہیں۔">
+Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj, is a trusted multispeciality hospital providing ethical, affordable, and compassionate healthcare. Our calm environment, experienced doctors, and dedicated nursing staff ensure that every patient feels safe, hopeful, and cared for. Serving since 2005, we have saved thousands of lives.
 </p>
 </div>
 <div>
@@ -187,44 +209,24 @@ Deepak Hospital, located at Shanti Chowk, Bansbari Hat, Bahadurganj, Kishanganj,
 </div>
 </div>
 </section>
+</div>
 
-<!-- ================= SERVICES ================= -->
-<section id="services" class="card">
+<!-- ================= SERVICES PAGE ================= -->
+<div id="services" class="page-section">
+<section class="card">
 <div class="section-title"><i class="fas fa-cogs"></i> <span id="services-title" data-hi="हमारी सेवाएं" data-en="Our Services" data-ur="ہماری خدمات">Our Services</span></div>
 <div class="grid grid-3">
 <div class="service-item">
+<img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="General Medicine">
 <div class="icon"><i class="fas fa-stethoscope"></i></div>
 <strong id="service1-title" data-hi="सामान्य चिकित्सा" data-en="General Medicine" data-ur="عام طب">General Medicine</strong>
 <p class="small" id="service1-desc" data-hi="दैनिक OPD और पुरानी देखभाल" data-en="Daily OPD & chronic care" data-ur="روزانہ OPD اور دائمی کیئر">Daily OPD & chronic care</p>
 </div>
 <div class="service-item">
+<img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Delivery & Gynecology">
 <div class="icon"><i class="fas fa-baby"></i></div>
 <strong id="service2-title" data-hi="डिलीवरी और स्त्री रोग" data-en="Delivery & Gynecology" data-ur="ڈیلیوری اور گائنیکولوجی">Delivery & Gynecology</strong>
 <p class="small" id="service2-desc" data-hi="सामान्य और सी-सेक्शन" data-en="Normal & C-Section" data-ur="عام اور سی سیکشن">Normal & C-Section</p>
 </div>
 <div class="service-item">
-<div class="icon"><i class="fas fa-heartbeat"></i></div>
-<strong id="service3-title" data-hi="ICU / NICU" data-en="ICU / NICU" data-ur="آئی سی یو / این آئی سی یو">ICU / NICU</strong>
-<p class="small" id="service3-desc" data-hi="गंभीर मरीज देखभाल" data-en="Critical patient care" data-ur="حساس مریض کی دیکھ بھال">Critical patient care</p>
-</div>
-<div class="service-item">
-<div class="icon"><i class="fas fa-tooth"></i></div>
-<strong id="service4-title" data-hi="दंत देखभाल" data-en="Dental Care" data-ur="دانتوں کی دیکھ بھال">Dental Care</strong>
-<p class="small" id="service4-desc" data-hi="दर्द-मुक्त उपचार" data-en="Pain-free treatment" data-ur="درد سے پاک علاج">Pain-free treatment</p>
-</div>
-<div class="service-item">
-<div class="icon"><i class="fas fa-flask"></i></div>
-<strong id="service5-title" data-hi="पैथोलॉजी" data-en="Pathology" data-ur="پیٹھولوجی">Pathology</strong>
-<p class="small" id="service5-desc" data-hi="सटीक लैब परीक्षण" data-en="Accurate lab testing" data-ur="درست لیب ٹیسٹنگ">Accurate lab testing</p>
-</div>
-<div class="service-item">
-<div class="icon"><i class="fas fa-pills"></i></div>
-<strong id="service6-title" data-hi="फार्मेसी" data-en="Pharmacy" data-ur="فارمیسی">Pharmacy</strong>
-<p class="small" id="service6-desc" data-hi="24×7 दवा सहायता" data-en="24×7 medicine support" data-ur="24×7 دوا کی سپورٹ">24×7 medicine support</p>
-</div>
-</div>
-</section>
-
-<!-- ================= DOCTORS ================= -->
-<section id="doctors" class="card">
-<div class="section-title"><i class="fas fa-user-md"></i> <span id="doctors-title" data
+<img src
